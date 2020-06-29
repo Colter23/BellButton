@@ -1,0 +1,71 @@
+@import './normalize.css';
+
+:root{
+	--color-text: #666;
+	--color-high-text: #ff5777;
+	--color-tint: #fa7298;
+	--color-background: #f4f4f4;
+	--font-size: 14px;
+	--line-hright: 1.5;
+}
+
+*,
+*::before,
+*::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+	user-select: none; /*进制用户用鼠标在页面上选取文字、图片等*/
+	-webkit-tap-highlight-color: transparent;
+	background: var(--color-background);
+	color: var(--color-text);
+	width: 100vw;
+}
+
+@font-face {
+	font-family: 'iconfont';
+	src: url('../iconfont/iconfont.eot');
+	src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+	url('../iconfont/iconfont.woff2') format('woff2'),
+	url('../iconfont/iconfont.woff') format('woff'),
+	url('../iconfont/iconfont.ttf') format('truetype'),
+	url('../iconfont/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a{
+	color: var(--color-text);
+	text-decoration: none;
+}
+
+.clear-fix::after{
+	clear: both;
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+
+.clear-fix{
+	zoom: 1;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
