@@ -1,13 +1,13 @@
 import {request} from './request'
 
-export function getHomeBanner() {
+export function getBiliBiliFan() {
 	return request({
-		url: '/x/web-show/res/loc?pf=7&id=1695'
+		url: 'https://bird.ioliu.cn/v1?url=https://api.bilibili.com/x/relation/stat?vmid=487550002'
 	})
 }
 
-export function getHomeData(tid, pn) {
+export function getYouTubeFan() {
 	return request({
-		url: '/archive_rank/getarchiverankbypartion&tid=' + tid + '&pn=' + pn,
+		url: 'https://www.googleapis.com/youtube/v3/channels?part=statistics&key=AIzaSyCKUgefjpXwiUEQUU8x6AxdEVJKRPKE3s8&id=UCflNPJUJ4VQh1hGDNK7bsFg'
 	})
 }

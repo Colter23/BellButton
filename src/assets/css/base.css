@@ -1,11 +1,48 @@
 @import './normalize.css';
 
+@media (min-width:945px){
+	:root{
+		--font-text-size: 25px;
+		--font-icon-size: 25px;
+	}
+}
+@media (max-width:945px){
+	:root{
+		--font-text-size: 15px;
+		--font-icon-size: 15px;
+	}
+}
+@media (max-width:630px){
+	:root{
+		--font-text-size: 0px;
+		--font-icon-size: 25px;
+	}
+}
+@media (max-width:325px){
+	:root{
+		--font-text-size: 0px;
+		--font-icon-size: 15px;
+	}
+}
+
+
 :root{
 	--color-text: #666;
 	--color-high-text: #ff5777;
 	--color-tint: #fa7298;
 	--color-background: #f4f4f4;
-	--font-size: 14px;
+
+	--color-momo: 245,150,170;
+	--color-momo-show: rgb(245,150,170);
+	--color-kohbai: 255,107,140;
+	--color-kohbai-show: rgb(255,107,140);
+
+	--color-blue1: 36,77,255;
+	--color-blue1-show: rgb(36,77,255);
+	--color-blue2: 14,157,252;
+	--color-blue2-show: rgb(14,157,252);
+
+	/*--font-size: 14px;*/
 	--line-hright: 1.5;
 }
 

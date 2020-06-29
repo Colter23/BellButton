@@ -1,31 +1,80 @@
 <template>
 	<div class="audioButton">
-		<audio-wave v-for="(item, index) in audioSrc" :audio-src="item" :key="index"></audio-wave>
+		<span class="audioText" v-show="!isPlay">
+			{{audioInfo.name}}
+		</span>
+		<audio-wave :audio-src="audioPath" :is-play="isPlay" @playEnd="isPlay=false"
+		            :width="audioInfo.width?audioInfo.width:130" :height="30"></audio-wave>
 	</div>
 </template>
 
 <script>
-	import AudioWave from "../components/AudioWave";
+	import AudioWave from "./AudioWave";
 
 	export default {
 		name: "AudioButton",
 		components: {
 			AudioWave
 		},
+		props: {
+			isPlay: {
+				type: Boolean,
+				default(){
+					return false
+				}
+			},
+			audioInfo: {
+				type: Object,
+				default(){
+					return{
+						src:require("assets/music/ふわふわ.mp3"),
+						title:"demo"
+					}
+				}
+			}
+		},
+		computed: {
+			audioPath(){
+				return require("assets/audio/"+this.audioInfo.path);
+			}
+		},
 		data(){
 			return{
-				audioSrc:[require("../assets/audio/demo.mp3"),
-									require("../assets/audio/勾指起誓.mp3")]
+
 			}
 		}
 	}
 </script>
 
 <style scoped>
-.audioButton{
-	display: inline-block;
-	padding: 5px 0px 0 0px;
-	background:  linear-gradient(to right, rgba(53,199,253,0.9), rgba(150, 96, 238, 0.9));
-	border-radius: 20px;
-}
+	.audioButton{
+		position: relative;
+		display: inline-block;
+		padding: 5px 0px 0 0px;
+		/*按钮蓝紫渐变背景*/
+		/*background: linear-gradient(to right, rgba(53,199,253,0.9), rgba(150, 96, 238, 0.9));*/
+		background: linear-gradient(to right, rgba(var(--color-blue2), 0.7), rgba(var(--color-blue1),0.7));
+		box-shadow: 3px 4px 10px 0 rgba(var(--color-blue1), 0.4);
+		/*box-shadow: 3px 4px 10px 0 rgba(53,199,253, 0.7);*/
+		border-radius: 20px;
+		transition: 0.3s;
+	}
+	.audioText{
+		cursor:default;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		line-height: 37px;
+
+		color: #ffffff;
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.audioButton:hover{
+		box-shadow: 3px 4px 15px 0 rgba(var(--color-blue1), 0.55);
+		transform:translate(-3px, -3px);
+		transition: 0.3s;
+	}
 </style>

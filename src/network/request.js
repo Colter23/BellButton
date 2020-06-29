@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export function request(config) {
 	const instance = axios.create({
-		baseURL: 'https://bird.ioliu.cn/v1?url=https://api.bilibili.com',
+		baseURL: '',
 		timeout: 5000,
 	})
 

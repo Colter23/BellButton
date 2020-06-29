@@ -5,6 +5,8 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+document.title = "猫芒ベル-Bell"
+
 new Vue({
   router,
   store,

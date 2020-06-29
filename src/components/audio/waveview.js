@@ -9,7 +9,7 @@ var wave = function(ctx, width, height) {
 		width: 400, //显示宽度
 		height: 100, //显示高度
 		scale: 2, //缩放系数，应为正整数，使用2(3? no!)倍宽高进行绘制，避免移动端绘制模糊
-		speed: 10, //移动速度系数，越大越快
+		speed: 14, //移动速度系数，越大越快
 
 		lineWidth: 2, //线条基础粗细
 
@@ -117,6 +117,7 @@ wave.prototype.input = function(pcmData, powerLevel, sampleRate) {
 	//绘制线
 	this.drawPath(path2, this.linear2);
 	this.drawPath(path1, this.linear1);
+
 }
 
 /**
