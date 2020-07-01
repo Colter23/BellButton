@@ -1,27 +1,27 @@
 @import './normalize.css';
 
-@media (min-width:945px){
+@media (min-width:995px){
 	:root{
 		--font-text-size: 25px;
-		--font-icon-size: 25px;
+		--font-icon-size: 30px;
 	}
 }
-@media (max-width:945px){
+@media (max-width:995px){
 	:root{
 		--font-text-size: 15px;
-		--font-icon-size: 15px;
+		--font-icon-size: 20px;
 	}
 }
-@media (max-width:630px){
+@media (max-width:740px){
 	:root{
 		--font-text-size: 0px;
-		--font-icon-size: 25px;
+		--font-icon-size: 30px;
 	}
 }
 @media (max-width:325px){
 	:root{
 		--font-text-size: 0px;
-		--font-icon-size: 15px;
+		--font-icon-size: 20px;
 	}
 }
 
@@ -30,7 +30,7 @@
 	--color-text: #666;
 	--color-high-text: #ff5777;
 	--color-tint: #fa7298;
-	--color-background: #f4f4f4;
+	--color-background: #f1f1f1;
 
 	--color-momo: 245,150,170;
 	--color-momo-show: rgb(245,150,170);

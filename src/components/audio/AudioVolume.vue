@@ -1,6 +1,10 @@
 <template>
 	<div class="volume">
-		<span class="volume-text">音量🔊</span>
+		<span class="volume-text">音量
+			<svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-Audio"></use>
+			</svg>
+		</span>
 		<input class="range" ref="range" type="range"  value="50" min="0" max="100" step="1"  @mousemove="rangeChange()">
 	</div>
 </template>

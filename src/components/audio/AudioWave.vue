@@ -14,33 +14,34 @@
 		props: {
 			isPlay: {
 				type: Boolean,
-				default(){
+				default() {
 					return false
 				}
 			},
 			width: {
 				type: Number,
-				default(){
-						return 140
-					}
-				},
+				default() {
+					return 140
+				}
+			},
 			height: {
 				type: Number,
-				default(){
+				default() {
 					return 30
 				}
 			},
 			audioSrc: {
 				type: String,
-				default(){
+				default() {
 					return "assets/music/ふわふわ.mp3"
 				}
 			}
 		},
-		data(){
+		data() {
 			return {
 				//音频
 				audio: Object,
+				context: Object,
 				//动画
 				anime: Object,
 				//画布
@@ -59,53 +60,52 @@
 		},
 		watch: {
 			//是否播放
-			isPlay(val){
-				if(val && this.audio.paused) {
+			isPlay(val) {
+				if (val && this.audio.paused) {
 					this.audioPlay();
-				}else{
+				} else {
 					this.audioPause();
 				}
 			},
 			//监测音量变化
-			audioVolume(val){
-
+			audioVolume(val) {
 				this.volumeNode.gain.value = val;
-			},
-			audioState(val){
-				if (val) {
-					this.$emit("playEnd");
-					console.log("ss")
-				}
 			}
 		},
 		computed: {
-			audioVolume(){
+			audioVolume() {
 				return this.$store.state.audioVolume;
-			},
-			audioState(){
-				//console.log(this.audio.ended);
-				return this.audio.ended;
 			}
 		},
 		methods: {
 			//播放状态切换
-			audioSwitch(isPlay){
+			audioSwitch(isPlay) {
 				if (this.audio.paused) {
 					this.audioPlay();
-				}else{
+				} else {
 					this.audioPause();
 				}
 			},
-			audioPlay(){
+			audioPlay() {
 				if (this.audio.paused) {
 					this.anime = requestAnimationFrame(this.draw);
-					this.audio.play();
+					if (this.context.resume()!=null){
+						this.context.resume().then(() => {
+							this.audio.play();
+						});
+					}else {
+						this.audio.play();
+					}
+
 				}
 			},
 			audioPause() {
 				this.audio.pause();
-				window.cancelAnimationFrame(this.anime);
 				this.ctx.clearRect(0, 0, this.width, this.height);
+				window.cancelAnimationFrame(this.anime);
+			},
+			audioEnd(){
+				this.$emit("playEnd");
 			},
 			/**
 			 * 根据音乐律动计算一个摇摆幅度，并绘制 (待优化)
@@ -131,14 +131,17 @@
 				this.animefun.input(this.voiceHeight, sum / cont, 44100)
 
 				this.anime = requestAnimationFrame(this.draw);
+				//console.log(this.audio.ended)
+				if (this.audio.ended){
+					this.audioEnd();
+				}
 			}
-
 		},
 		mounted() {
 
 			//加载媒体
 			this.audio = new Audio(this.audioSrc);
-			let context = new(window.AudioContext || window.webkitAudioContext)();
+			this.context = new(window.AudioContext || window.webkitAudioContext)();
 
 			//获取画布
 			//this.canvas = document.querySelector(".wrap");
@@ -150,11 +153,11 @@
 			this.canvas.height = this.height;
 
 			//创建媒体源
-			let audioSrc = context.createMediaElementSource(this.audio);
+			let audioSrc = this.context.createMediaElementSource(this.audio);
 			//创建分析机
-			this.analyser = context.createAnalyser();
+			this.analyser = this.context.createAnalyser();
 			//创建音量节点
-			this.volumeNode = context.createGain();
+			this.volumeNode = this.context.createGain();
 			//更改默认音量
 			this.volumeNode.gain.value = 0.5;
 
@@ -164,7 +167,7 @@
 			//分析机与音量节点连接
 			this.analyser.connect(this.volumeNode);
 			//音量节点与输出目标连接
-			this.volumeNode.connect(context.destination);
+			this.volumeNode.connect(this.context.destination);
 
 
 			//确定频域的快速傅里叶变换参数  32-32768内的2的非零幂

@@ -4,9 +4,11 @@
 		<div class="bell-text-info">点一下，玩一年</div>
 		<audio-volume class="audio-volume"></audio-volume>
 		<div style="width: 100%;">
-			<div class="card" v-for="(voice, index) in voiceList" :key="index">
+			<div class="card" v-for="(voice, index1) in voiceList" :key="index1">
 				<p class="card-text">{{voice.name}}</p>
-				<main-audio :audio-info="voice.voicelist"></main-audio>
+				<div class="audio-item" v-for="(item, index2) in voice.voicelist"  @click="clickItem(index1+''+index2)" :key="index2">
+					<audio-button  :audio-info="item" :is-play="currentIndex===index1+''+index2"></audio-button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -14,19 +16,30 @@
 
 <script>
 
-	import MainAudio from "components/audio/MainAudio";
 	import AudioVolume from "components/audio/AudioVolume";
-	import Voices from "assets/audio/voices.json";
+	import Voices from "assets/voices.json";
+	import AudioButton from "components/audio/AudioButton";
+
 
 	export default {
 		name: "BellAudio",
 		components: {
+			AudioButton,
 			AudioVolume,
-			MainAudio
 		},
 		data(){
 			return{
 				voiceList: Voices.groups,
+				currentIndex: -1
+			}
+		},
+		methods: {
+			clickItem(index){
+				if (this.currentIndex === index) {
+					this.currentIndex = -1;
+				}else {
+					this.currentIndex = index;
+				}
 			}
 		}
 	}
@@ -71,5 +84,10 @@
 		box-shadow: 6px 4px 30px rgba(136,165,191,.5), -8px -4px 16px hsla(0,0%,100%,.6);
 		transform:translate(-3px, -3px);
 		transition: 0.5s;
+	}
+	.audio-item{
+		display: inline-block;
+		margin-right: 20px;
+		margin-bottom: 20px;
 	}
 </style>

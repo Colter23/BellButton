@@ -1,7 +1,12 @@
 <template>
   <div class="home">
-    <div class="box bell-img-box">
+    <div class="box" @click="noTouch">
       <img class=" bell-img" src="../../assets/img/Qbell.png" alt="">
+      <div style="margin-bottom: 10px; color: #a6a6a6; font-size: 20px">这么可爱的小猫咪不<del>prpr</del>摸一下吗
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-bell4"></use>
+        </svg>
+      </div>
     </div>
 
     <div class="box bell-data-box">
@@ -30,6 +35,7 @@
           <span>ViViD</span>
         </a>
       </div>
+      <div style="margin-bottom: 10px; color: #a6a6a6; font-size: 20px">这么可爱的小猫咪不<del>prpr</del>关注一下吗</div>
     </div>
   </div>
 </template>
@@ -47,6 +53,8 @@ export default {
     return{
       bilibilifan: "点击获取",
       youtubefan: "点击获取",
+      audio: null,
+      audioPath: require("assets/audio/不要摸我！.mp3"),
     }
   },
   methods: {
@@ -59,6 +67,14 @@ export default {
       getYouTubeFan().then(res => {
         this.youtubefan = res.items[0].statistics.subscriberCount;
       })
+    },
+    noTouch(){
+      if (this.audio===null){
+        this.audio = new Audio(this.audioPath);
+      }
+      if (this.audio.paused||this.audio.ended){
+        this.audio.play();
+      }
     }
   }
 }
@@ -85,14 +101,8 @@ export default {
     transform:translate(-3px, -3px);
     transition: 0.5s;
   }
-  .bell-img-box{
-    /*display: inline-block;*/
-    /*border: solid 1px #00a2ca;*/
-  }
   .bell-img{
     width: 70%;
-    /*height: 30%;*/
-    transition: 0.5s;
   }
   .bell-data-box{
     height: 380px;

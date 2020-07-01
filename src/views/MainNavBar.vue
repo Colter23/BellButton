@@ -1,13 +1,40 @@
 <template>
 	<div>
 		<nav-bar class="nav-bar">
-			<div slot="left" class="back" @click="sideBarOn" style="width: 100%; font-size: 30px">🔔</div>
+			<div slot="left" class="back" @click="sideBarOn" style="width: 100%; font-size: 30px">
+				<i class="fas fa-align-left" style="color: #f2f4f3"></i>
+			</div>
 			<div slot="center" class="link">
-				<router-link to="/"><span>BellInfo</span>🔔</router-link>
-				<router-link to="/audio"><span>BellButton</span>🎶</router-link>
-				<router-link to="/album"><span>BellAlbum</span>🎨</router-link>
-				<router-link to="/music"><span>BellMusic</span>🎤</router-link>
-				<router-link to="/video"><span>BellVideo</span>📺</router-link>
+				<router-link to="/">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-bell3"></use>
+					</svg>
+					<span>BellInfo</span>
+				</router-link>
+				<router-link to="/audio">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-yinle"></use>
+					</svg>
+					<span>BellButton</span>
+				</router-link>
+				<router-link to="/album">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-album"></use>
+					</svg>
+					<span>BellAlbum</span>
+				</router-link>
+				<router-link to="/music">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-KTV"></use>
+					</svg>
+					<span>BellMusic</span>
+				</router-link>
+				<router-link to="/video">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-tvgame"></use>
+					</svg>
+					<span>BellVideo</span>
+				</router-link>
 			</div>
 			<div slot="right" class="link">
 				<router-link to="/about" style="width: 100%; font-size: 18px">关于</router-link>
@@ -15,11 +42,36 @@
 		</nav-bar>
 
 		<div class="sidebar" ref="sidebar">
-			<router-link to="/" style="margin-top: 5px">BellInfo🔔</router-link>
-			<router-link to="/audio">BellButton🎶</router-link>
-			<router-link to="/album">BellAlbum🎨</router-link>
-			<router-link to="/music">BellMusic🎤</router-link>
-			<router-link to="/video">BellVideo📺</router-link>
+			<router-link to="/">
+				<svg class="icon" style="font-size: 30px" aria-hidden="true">
+					<use xlink:href="#icon-bell3"></use>
+				</svg>
+				<span>BellInfo</span>
+			</router-link>
+			<router-link to="/audio">
+				<svg class="icon" style="font-size: 30px" aria-hidden="true">
+					<use xlink:href="#icon-yinle"></use>
+				</svg>
+				<span>BellButton</span>
+			</router-link>
+			<router-link to="/album">
+				<svg class="icon"  style="font-size: 30px" aria-hidden="true">
+					<use xlink:href="#icon-album"></use>
+				</svg>
+				<span>BellAlbum</span>
+			</router-link>
+			<router-link to="/music">
+				<svg class="icon"  style="font-size: 30px" aria-hidden="true">
+					<use xlink:href="#icon-KTV"></use>
+				</svg>
+				<span>BellMusic</span>
+			</router-link>
+			<router-link to="/video">
+				<svg class="icon"  style="font-size: 30px" aria-hidden="true">
+					<use xlink:href="#icon-tvgame"></use>
+				</svg>
+				<span>BellVideo</span>
+			</router-link>
 		</div>
 
 		<div style="margin-top: 80px"  @click="sideBarOff">
@@ -27,6 +79,7 @@
 				<router-view/>
 			</keep-alive>
 		</div>
+
 
 	</div>
 </template>
@@ -81,20 +134,26 @@
 		display: inline-block;
 		width: 20%;
 		margin: 0;
-		font-size: var(--font-icon-size);
+		/*font-size: var(--font-icon-size);*/
 		font-weight: bold;
 		color: #f2f4f3;
 		text-decoration: none;
-		vertical-align: middle;
+		/*vertical-align: middle;*/
 	}
 	.link a span{
 		font-size: var(--font-text-size);
-		vertical-align: middle;
+		/*vertical-align: middle;*/
 	}
 	.link a.router-link-exact-active {
 		height: 50px;
 		background: rgba(var(--color-blue2),.42);
 	}
+
+	.icon{
+		margin: 10px 6px 0 3px;
+		font-size: var(--font-icon-size);
+	}
+
 	.sidebar{
 		position: fixed;
 		top: 0;

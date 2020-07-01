@@ -1,9 +1,9 @@
 <template>
 	<div class="audioButton">
-		<span class="audioText" v-show="!isPlay">
+		<span class="audioText" v-show="!isEnd">
 			{{audioInfo.name}}
 		</span>
-		<audio-wave :audio-src="audioPath" :is-play="isPlay" @playEnd="isPlay=false"
+		<audio-wave :audio-src="audioPath" :is-play="isEnd" @playEnd="isEnd=false"
 		            :width="audioInfo.width?audioInfo.width:130" :height="30"></audio-wave>
 	</div>
 </template>
@@ -17,12 +17,7 @@
 			AudioWave
 		},
 		props: {
-			isPlay: {
-				type: Boolean,
-				default(){
-					return false
-				}
-			},
+			isPlay: false,
 			audioInfo: {
 				type: Object,
 				default(){
@@ -40,7 +35,12 @@
 		},
 		data(){
 			return{
-
+				isEnd: false
+			}
+		},
+		watch: {
+			isPlay(val){
+				this.isEnd = this.isPlay
 			}
 		}
 	}
