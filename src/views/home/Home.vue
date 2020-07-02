@@ -106,7 +106,6 @@ export default {
     width: 70%;
   }
   .bell-data-box{
-    height: 430px;
     width: 85%;
   }
   .fan{
