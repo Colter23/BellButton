@@ -27,36 +27,34 @@
 		font-size: 25px;
 		font-weight: bold;
 	}
-	.music-box{
+	.music-box {
 		position: relative;
 		width: 80vw;
 		height: 80vh;
 		min-width: 330px;
-		margin: auto;
-		margin-top: 10px;
-		background: #fff;
+		margin: 10px auto auto auto;
+		background: #e4effe;
 		overflow: hidden;
 		border-radius: 30px;
 		box-shadow: -10px -10px 15px -5px rgba(255, 255, 255, 1),
 								10px 10px 18px -5px rgba(0,0,0,0.4);
 	}
 	.music-left{
+		display: var(--list-display);
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 35%;
-		min-width: 330px;
+		width: 300px;
 		height: 100%;
-		background: #e4effe;
 	}
 	.music-right{
 		position: absolute;
 		top: 0;
 		right: 0;
-		width: 70%;
+		width: var(--player-width);
 		height: 100%;
 		background: #cde0f9;
 		border-radius: 30px;
-		box-shadow: -6px 0px 20px -2px rgba(0, 0, 0, 0.2);
+		box-shadow: -6px 0 20px -2px rgba(0, 0, 0, 0.2);
 	}
 </style>

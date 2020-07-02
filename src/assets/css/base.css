@@ -6,6 +6,7 @@
 		--font-icon-size: 30px;
 
 		--navbar-width: 75px;
+
 	}
 }
 @media (max-width:1055px){
@@ -16,6 +17,8 @@
 		--navbar-width: 60px;
 	}
 }
+
+
 @media (max-width:740px){
 	:root{
 		--font-text-size: 0px;
@@ -33,6 +36,40 @@
 	}
 }
 
+/*播放页自适应*/
+@media (min-width: 800px) {
+	:root {
+		/*按钮自适应*/
+		--botton-size: 60px;
+		--button-size-big: 80px;
+		--button-margin: 10px 20px;
+		--button-margin-big: 0 10px;
+		--progress-margin: 10px 90px 20px;
+		--progress-height: 30px;
+		--button-group-padding: 20px 60px;
+		--button-group-width: 420px;
+		--button-group-radius: 40px;
+		--list-display: block;
+		--player-width: calc(100% - 300px);
+	}
+}
+
+@media (max-width: 800px) {
+	:root {
+		/*按钮自适应*/
+		--botton-size: 30px;
+		--button-size-big: 40px;
+		--button-margin: 5px 10px;
+		--button-margin-big: 0 5px;
+		--progress-margin: 5px 20px 20px;
+		--progress-height: 20px;
+		--button-group-padding: 10px 30px;
+		--button-group-width: 210px;
+		--button-group-radius: 20px;
+		--list-display: none;
+		--player-width: 100%;
+	}
+}
 
 :root{
 	--color-text: #666;
