@@ -1,12 +1,8 @@
 <template>
 	<div class="about">
 		<div class="text-box">
-			<p>新手不太会做 没有审美不会设计 大佬勿喷</p>
-			<p>页面一些元素参考Coceki的pekobutton</p>
-			<p>火狐，苹果可能会有Bug，咱也不会修。。</p>
-			<p>IE???还有人用IE，不会吧不会吧</p>
-			<p>可能会弃坑，后面工程量有点大</p>
-			<p>最后</p>
+			<p>日语暂时还没有翻译</p>
+			<p>有翻译man吗。。我要吃人</p>
 			<p>
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#icon-bell4"></use>
@@ -37,15 +33,15 @@
 			</p>
 		</div>
 		<div class="text-box">
-			<p>友情链接</p>
+			<p>{{$t("about.link")}}</p>
 			<p>
 				<a href="https://vtbbtn.org/" target="_blank" style="color: #00a2ca">
-					VTuber语音按钮集合
+					{{$t("about.vtbbtn")}}
 				</a>
 			</p>
 			<p>
 				<a href="https://peko.top/" target="_blank" style="color: #00a2ca">
-					Peko按钮
+					{{$t("about.pekobtn")}}
 				</a>
 			</p>
 			<p>
@@ -59,12 +55,13 @@
 			</p>
 		</div>
 		<div class="text-box">
-			<p>作者:
+			<p>{{$t("about.author")}}:
 				<a href="https://space.bilibili.com/32868931" target="_blank" style="color: #00a2ca">
 					Colter_null
 				</a>
 			</p>
-			<p>本站为舔食者创作，与ViViD官方无关</p>
+			<p>{{$t("about.copyright")}}</p>
+			<a href="https://icp.gov.moe" target="_blank" style="color: #00a2ca">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=2020020222" target="_blank" style="color: #00a2ca"> 2020020222号</a>
 			<p>
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#icon-bell3"></use>

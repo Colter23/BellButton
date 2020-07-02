@@ -5,7 +5,7 @@
 		<audio-volume class="audio-volume"></audio-volume>
 		<div style="width: 100%;">
 			<div class="card" v-for="(voice, index1) in voiceList" :key="index1">
-				<p class="card-text">{{voice.name}}</p>
+				<p class="card-text">{{voice.translation[current_language]}}</p>
 				<div class="audio-item" v-for="(item, index2) in voice.voicelist"  @click="clickItem(index1+''+index2)" :key="index2">
 					<audio-button  :audio-info="item" :is-play="currentIndex===index1+''+index2"></audio-button>
 				</div>
@@ -40,6 +40,11 @@
 				}else {
 					this.currentIndex = index;
 				}
+			}
+		},
+		computed: {
+			current_language(){
+				return this.$i18n.locale
 			}
 		}
 	}

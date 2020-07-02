@@ -2,7 +2,7 @@
   <div class="home">
     <div class="box" @click="noTouch">
       <img class=" bell-img" src="../../assets/img/Qbell.png" alt="">
-      <div style="margin-bottom: 10px; color: #a6a6a6; font-size: 20px">这么可爱的小猫咪不<del>prpr</del>摸一下吗
+      <div style="margin-bottom: 10px; color: #a6a6a6; font-size: 20px">{{$t("home.touch.before")}}<del>prpr</del>{{$t("home.touch.after")}}
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-bell4"></use>
         </svg>
@@ -10,7 +10,7 @@
     </div>
 
     <div class="box bell-data-box">
-      <div class="fan" style="color: #01affd" @click="getBFan">B站客人们: {{bilibilifan}}</div>
+      <div class="fan" style="color: #01affd" @click="getBFan">B站客人们: {{bilibilifan}}</div>おかくさま
       <div class="fan" style="color: #ff2424" @click="getYFan">YouTube客人们: {{youtubefan}}</div>
       <div>
         <a href="https://space.bilibili.com/487550002" target="_blank" class="link-button bilibili-link">
@@ -35,7 +35,8 @@
           <span>ViViD</span>
         </a>
       </div>
-      <div style="margin-bottom: 10px; color: #a6a6a6; font-size: 20px">这么可爱的小猫咪不<del>prpr</del>关注一下吗</div>
+      <div style="margin-bottom: 10px; color: #a6a6a6; font-size: 20px">{{$t("home.follow.before")}}<del>prpr</del>{{$t("home.follow.after")}}</div>
+      <a href="https://icp.gov.moe" target="_blank" style="font-size: 17px; color: #00a2ca">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=2020020222" target="_blank"  style="font-size: 17px; color: #00a2ca"> 2020020222号</a>
     </div>
   </div>
 </template>
@@ -105,7 +106,7 @@ export default {
     width: 70%;
   }
   .bell-data-box{
-    height: 380px;
+    height: 430px;
     width: 85%;
   }
   .fan{

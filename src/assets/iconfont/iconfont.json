@@ -13,6 +13,13 @@
       "unicode_decimal": 59144
     },
     {
+      "icon_id": "1700802",
+      "name": "翻译",
+      "font_class": "ic_translate_px",
+      "unicode": "e901",
+      "unicode_decimal": 59649
+    },
+    {
       "icon_id": "3263687",
       "name": "bell",
       "font_class": "bell",
@@ -41,11 +48,25 @@
       "unicode_decimal": 58974
     },
     {
+      "icon_id": "11065020",
+      "name": "翻译",
+      "font_class": "-alphabetlanguagelettertranslateword",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
       "icon_id": "11742030",
       "name": "画板",
       "font_class": "tubiaozhizuomoban",
       "unicode": "e630",
       "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "11803979",
+      "name": "翻译",
+      "font_class": "fanyi",
+      "unicode": "e637",
+      "unicode_decimal": 58935
     },
     {
       "icon_id": "11913485",
@@ -95,6 +116,13 @@
       "font_class": "icon_music",
       "unicode": "e60e",
       "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "14137739",
+      "name": "translate",
+      "font_class": "translate",
+      "unicode": "e6ec",
+      "unicode_decimal": 59116
     },
     {
       "icon_id": "14459185",

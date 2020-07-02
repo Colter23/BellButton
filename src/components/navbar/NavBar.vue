@@ -19,17 +19,17 @@
 		height: 50px;
 		line-height: 50px;
 		text-align: center;
-		/*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);*/
 	}
 
-	.left,
+	.left{
+		width: var(--navbar-width);
+	}
+
 	.right{
-		width: 75px;
-		/*background: #ff7552;*/
+		width: calc(var(--navbar-width)*2);
 	}
 
 	.center{
 		flex: 1;
-		/*background: #3dff6a;*/
 	}
 </style>

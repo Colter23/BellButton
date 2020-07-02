@@ -1,0 +1,22 @@
+{
+  "navbar": {
+    "bell_info": "ベルじょうほう"
+  },
+  "home": {
+    "touch": {
+      "before": "この可愛い子猫には",
+      "after": "触らないの？"
+    },
+    "follow": {
+      "before": "こんなに可愛い子猫に",
+      "after": "注目しないの？"
+    }
+  },
+  "about": {
+    "author": "著者",
+    "copyright": "このプロジェクトはファンによるもので、ViViD公式は一切関係ありません",
+    "link": "リンク",
+    "vtbbtn": "VTuberの音声ボタンコレクション",
+    "pekobtn": "Pekoボタン"
+  }
+}

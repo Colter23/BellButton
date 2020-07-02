@@ -1,7 +1,7 @@
 <template>
 	<div class="audioButton">
 		<span class="audioText" v-show="!isEnd">
-			{{audioInfo.name}}
+			{{audioInfo.translation[current_language]}}
 		</span>
 		<audio-wave :audio-src="audioPath" :is-play="isEnd" @playEnd="isEnd=false"
 		            :width="audioInfo.width?audioInfo.width:130" :height="30"></audio-wave>
@@ -31,6 +31,9 @@
 		computed: {
 			audioPath(){
 				return require("assets/audio/"+this.audioInfo.path);
+			},
+			current_language(){
+				return this.$i18n.locale
 			}
 		},
 		data(){

@@ -37,7 +37,14 @@
 				</router-link>
 			</div>
 			<div slot="right" class="link">
-				<router-link to="/about" style="width: 100%; font-size: 18px">关于</router-link>
+				<svg class="icon" :class="isLanguageBoxOn?'translate-box-active':''" aria-hidden="true" @click="switchLanguage" style="width: 50%; height: 49px; padding: 10px 0; color: #fff; margin: 0; vertical-align: middle;">
+					<use xlink:href="#icon-ic_translate_px"></use>
+				</svg>
+				<div class="translate-box" ref="language">
+					<div class="ts-item top-radius ts-zh" @click="changeLanguage('zh')">简体中文</div>
+					<div class="ts-item bottom-radius ts-ja" @click="changeLanguage('ja')">日本語</div>
+				</div>
+				<router-link to="/about" style="width: 50%; font-size: 18px; vertical-align: middle;">About</router-link>
 			</div>
 		</nav-bar>
 
@@ -74,7 +81,7 @@
 			</router-link>
 		</div>
 
-		<div style="margin-top: 80px"  @click="sideBarOff">
+		<div style="margin-top: 80px" @click="sideBarOff">
 			<keep-alive>
 				<router-view/>
 			</keep-alive>
@@ -92,6 +99,7 @@
 		data() {
 			return {
 				isSideBarOn: false,
+				isLanguageBoxOn: false
 			}
 		},
 		methods: {
@@ -100,7 +108,7 @@
 					this.isSideBarOn = false;
 					this.$refs.sidebar.style.width = "0%";
 				} else {
-					this.isSideBarOn = true
+					this.isSideBarOn = true;
 					this.$refs.sidebar.style.width = "60%";
 				}
 			},
@@ -109,6 +117,25 @@
 					this.isSideBarOn = false;
 					this.$refs.sidebar.style.width = "0%";
 				}
+				if (this.isLanguageBoxOn){
+					this.isLanguageBoxOn = false;
+					this.$refs.language.style.display = "none";
+				}
+			},
+			switchLanguage(){
+				if (this.isLanguageBoxOn){
+					this.isLanguageBoxOn = false;
+					this.$refs.language.style.display = "none";
+				} else {
+					this.isLanguageBoxOn = true;
+					this.$refs.language.style.display = "block";
+				}
+			},
+			changeLanguage(type){
+				localStorage.setItem('locale',type);
+				this.$i18n.locale = type;
+				this.isLanguageBoxOn = false;
+				this.$refs.language.style.display = "none";
 			}
 		}
 	}
@@ -128,6 +155,7 @@
 		z-index: 10;
 	}
 	.link{
+		position: relative;
 		height: 50px;
 	}
 	.link a {
@@ -153,6 +181,62 @@
 		margin: 10px 6px 0 3px;
 		font-size: var(--font-icon-size);
 	}
+	
+	
+	.translate-box{
+		display: none;
+		position: absolute;
+		top: 60px;
+		right: calc(var(--navbar-width) + var(--navbar-width)/2 - 60px);
+		width: 120px;
+		height: 100px;
+		border-radius: 10px;
+		/*background: #5dbee8;*/
+		background-blend-mode: normal,luminosity;
+		backdrop-filter: blur(10px);
+		background: linear-gradient(200.6deg,rgba(var(--color-blue1),.54) 19.14%,rgba(var(--color-blue2),.42) 154.68%);
+		box-shadow: 3px 6px 20px rgba(104,102,255,.44), -3px -6px 10px hsla(0,0%,100%,.6);/*rgba(104,102,255,.44)*/
+		z-index: 10;
+	}
+	.translate-box::before{
+		content: '';
+		position: absolute;
+		top: -24px;
+		left: 50px;
+		width: 0;
+		height: 0;
+		border: 12px solid transparent;
+		border-bottom-color: rgba(var(--color-blue1),.62);
+		z-index: 9;
+		/*background: #000;*/
+	}
+	.translate-box-active{
+		/*height: 50px;*/
+		background: rgba(var(--color-blue2),.42);
+	}
+	.ts-item{
+		display: block;
+		height: 50px;
+		color: #fff;
+		/*width: 100%;*/
+		line-height: 50px;
+		font-size: 20px;
+		transition: 0.3s;
+	}
+	.ts-item:hover{
+		background: rgba(var(--color-blue2),.42);
+		transition: 0.3s;
+	}
+	.top-radius{
+		border-radius: 10px 10px 0 0;
+	}
+	.bottom-radius{
+		border-radius: 0 0 10px 10px;
+	}
+
+
+
+	
 
 	.sidebar{
 		position: fixed;

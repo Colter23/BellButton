@@ -1,0 +1,22 @@
+{
+  "navbar": {
+    "bell_info": "Bell信息"
+  },
+  "home": {
+    "touch": {
+      "before": "这么可爱的小猫咪不",
+      "after": "摸一下吗？"
+    },
+    "follow": {
+      "before": "这么可爱的小猫咪不",
+      "after": "关注一下吗？"
+    }
+  },
+  "about": {
+    "author": "作者",
+    "copyright": "本站为舔食者创作，与ViViD官方无关",
+    "link": "友情链接",
+    "vtbbtn": "VTuber按钮集合",
+    "pekobtn": "Peko按钮"
+  }
+}
