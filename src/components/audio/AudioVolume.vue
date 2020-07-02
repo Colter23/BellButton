@@ -1,6 +1,6 @@
 <template>
 	<div class="volume">
-		<span class="volume-text">音量
+		<span class="volume-text">{{$t("button.volume")}}
 			<svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-Audio"></use>
 			</svg>

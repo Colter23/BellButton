@@ -10,10 +10,21 @@
     "follow": {
       "before": "こんなに可愛い子猫に",
       "after": "注目しないの？"
-    }
+    },
+    "bilifan": "BiliBiliお客様",
+    "ytbfan": "YouTubeお客様",
+    "touchGet": "クリックして取得"
+  },
+  "button": {
+    "bellbtn": "Bellボタン",
+    "volume": "ボリューム"
   },
   "about": {
     "author": "著者",
+    "partner": "協力",
+    "feedback": "提案，BUG，素材連絡できます",
+    "mail": "メールボックス",
+    "letter": "BiliBiliプライベートレター",
     "copyright": "このプロジェクトはファンによるもので、ViViD公式は一切関係ありません",
     "link": "リンク",
     "vtbbtn": "VTuberの音声ボタンコレクション",

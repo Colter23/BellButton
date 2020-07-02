@@ -1,13 +1,47 @@
 <template>
 	<div class="bell-album">
-		<div style="margin-bottom: 20px">Bell相册    敬请期待prpr</div>
-		<img class=" bell-img" src="../../assets/img/bell.jpg" alt="">
+<!--		<div style="margin-bottom: 20px">Bell相册    敬请期待prpr</div>-->
+<!--		<img class=" bell-img" src="../../assets/img/bell01.jpg" alt="">-->
+
+		<div class="grid" >
+			<div class="grid-item" v-for="(item, index) in imges">
+				<img :src="imgSrc(item.path)" style="width: 100%" alt="">
+			</div>
+		</div>
+
+
 	</div>
 </template>
 
 <script>
+
+	import imges from "assets/imges.json";
+	import Masonry from "masonry-layout";
 	export default {
-		name: "BellAlbum"
+		name: "BellAlbum",
+		data: () => ({
+			imges: imges.groups[0].imglist
+		}),
+		methods: {
+			imgSrc(src){
+				return require("assets/img/album/"+src);
+			},
+			updated() {
+
+			}
+		},
+		updated() {
+			var grid = document.querySelector(".grid");
+			console.log(grid)
+			var msnry = new Masonry(grid, {
+				// options...
+				columnWidth: 200,
+				itemSelector: ".grid-item",
+				// columnWidth: 200,
+			});
+			console.log(msnry)
+		}
+
 	}
 </script>
 
@@ -15,7 +49,26 @@
 	.bell-album{
 		font-size: 25px;
 		font-weight: bold;
+		/*column-count: 4;*/
+		/*column-gap: 0;*/
 	}
+	.img-item{
+		margin: 4px;
+		font-family: Helvetica;
+
+		/*width: 500px;*/
+	}
+	.img-item img{
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+
+
+
+
+
 	.bell-img{
 		width: 80%;
 	}

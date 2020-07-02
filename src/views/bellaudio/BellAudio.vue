@@ -1,6 +1,6 @@
 <template>
 	<div class="bell-audio">
-		<div class="bell-text">Bell按钮</div>
+		<div class="bell-text">{{$t("button.bellbtn")}}</div>
 		<div class="bell-text-info">点一下，玩一年</div>
 		<audio-volume class="audio-volume"></audio-volume>
 		<div style="width: 100%;">

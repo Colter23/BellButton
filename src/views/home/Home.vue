@@ -10,8 +10,8 @@
     </div>
 
     <div class="box bell-data-box">
-      <div class="fan" style="color: #01affd" @click="getBFan">B站客人们: {{bilibilifan}}</div>おかくさま
-      <div class="fan" style="color: #ff2424" @click="getYFan">YouTube客人们: {{youtubefan}}</div>
+      <div class="fan" style="color: #01affd" @click="getBFan">{{$t("home.bilifan")}}: {{bilibilifan}}</div>
+      <div class="fan" style="color: #ff2424" @click="getYFan">{{$t("home.ytbfan")}}: {{youtubefan}}</div>
       <div>
         <a href="https://space.bilibili.com/487550002" target="_blank" class="link-button bilibili-link">
           <img src="../../assets/img/bilibili.svg" alt="" style="width: 30px; height: 30px; position: absolute; left: 35px; bottom: 50%; transform: translate3d(0px, 50%, 0px);">
@@ -52,8 +52,8 @@ export default {
   },
   data(){
     return{
-      bilibilifan: "点击获取",
-      youtubefan: "点击获取",
+      bilibilifan: this.$t("home.touchGet"),
+      youtubefan: this.$t("home.touchGet"),
       audio: null,
       audioPath: require("assets/audio/不要摸我！.mp3"),
     }
@@ -76,6 +76,17 @@ export default {
       if (this.audio.paused||this.audio.ended){
         this.audio.play();
       }
+    }
+  },
+  computed: {
+    touchGet(){
+      return this.$t("home.touchGet");
+    }
+  },
+  watch: {
+    touchGet(val){
+      this.bilibilifan = val;
+      this.youtubefan = val;
     }
   }
 }

@@ -10,10 +10,21 @@
     "follow": {
       "before": "这么可爱的小猫咪不",
       "after": "关注一下吗？"
-    }
+    },
+    "bilifan": "B站客人们",
+    "ytbfan": "YouTube客人们",
+    "touchGet": "点击获取"
+  },
+  "button": {
+    "bellbtn": "Bell按钮",
+    "volume": "音量"
   },
   "about": {
     "author": "作者",
+    "partner": "合作",
+    "feedback": "建议，BUG，素材可以联系",
+    "mail": "邮箱",
+    "letter": "B站私信",
     "copyright": "本站为舔食者创作，与ViViD官方无关",
     "link": "友情链接",
     "vtbbtn": "VTuber按钮集合",

@@ -14,14 +14,13 @@
 			</p>
 		</div>
 		<div class="text-box">
-			<p>建议，BUG，素材可以联系</p>
-			<p>QQ邮箱:3375582524@qq.com</p>
-			<p>B站私信:
-				<a href="https://space.bilibili.com/32868931" target="_blank" style="color: #00a2ca">
+			<p>{{$t("about.feedback")}}</p>
+			<p>QQ{{$t("about.mail")}}:3375582524@qq.com</p>
+			<p>{{$t("about.letter")}}:
+				<a href="https://message.bilibili.com/#/whisper/mid32868931" target="_blank" style="color: #00a2ca">
 					Colter_null
 				</a>
 			</p>
-			<p>最好B站私信</p>
 			<p>
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#icon-bell2"></use>
@@ -58,6 +57,11 @@
 			<p>{{$t("about.author")}}:
 				<a href="https://space.bilibili.com/32868931" target="_blank" style="color: #00a2ca">
 					Colter_null
+				</a>
+			</p>
+			<p>{{$t("about.partner")}}:
+				<a href="https://space.bilibili.com/30734570" target="_blank" style="color: #00a2ca">
+					正義desu-null
 				</a>
 			</p>
 			<p>{{$t("about.copyright")}}</p>
