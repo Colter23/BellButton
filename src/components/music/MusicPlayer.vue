@@ -22,7 +22,7 @@
 			</div>
 			<div class="control-item next-control"><i class="fas fa-step-forward"></i></div>
 		</div>
-		<audio @loadedmetadata="loaded" src="musicPath" ref="audio" id="audio"></audio>
+		<audio @loadedmetadata="loaded" @ended="ended" :src="musicPath" ref="audio" id="audio"></audio>
 	</div>
 </template>
 
@@ -65,27 +65,24 @@
 		},
 		watch: {
 			musicPath(){
-
 				this.audioPause();
 				this.audioPlay();
-
-
-
-				this.audio.addEventListener('ended',function () {
-					this.isPlay = false;
-				},false);
 
 				if (this.timer) {
 					this.nowTime = 0;
 					clearInterval(this.timer);
-				};
+				}
 				this.timer = setInterval(this.updateProgress,1000);
 			}
 		},
 		methods: {
 			// 加载完成初始化
 			loaded() {
-				this.musicLength = this.$refs.audio.duration;
+				this.musicLength = this.audio.duration;
+			},
+			// 结束
+			ended() {
+				this.isPlay = false;
 			},
 			//更新进度条
 			updateProgress(){
@@ -142,7 +139,6 @@
 			window.addEventListener('resize',ev => {
 				this.updateControlbBoxSize();
 			});
-
 
 			//this.audio = new Audio(val);
 			// this.audio = this.$refs.audio;
