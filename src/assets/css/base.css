@@ -7,6 +7,7 @@
 
 		--navbar-width: 75px;
 
+		--cover-img-size: 420px;
 	}
 }
 @media (max-width:1055px){
@@ -15,6 +16,8 @@
 		--font-icon-size: 20px;
 
 		--navbar-width: 60px;
+
+		--cover-img-size: 350px;
 	}
 }
 
@@ -23,7 +26,6 @@
 		--list-display: block;
 	}
 }
-
 @media (max-width: 900px) {
 	:root{
 		--list-display: none;
@@ -38,6 +40,40 @@
 		--navbar-width: 50px;
 	}
 }
+
+@media (min-width:600px){
+	:root{
+		--progress-bar-height: 30px;
+		--progress-bar-bottom: 180px;
+		--progress-num: 25px;
+
+		--play-control-size: 80px;
+		--prenext-control-size: 60px;
+
+		--music-title-size: 30px;
+	}
+}
+@media (max-width:600px){
+	:root{
+		--progress-bar-height: 20px;
+		--progress-bar-bottom: 140px;
+		--progress-num: 15px;
+
+		--play-control-size: 55px;
+		--prenext-control-size: 45px;
+
+		--cover-img-size: 290px;
+
+		--music-title-size: 25px;
+	}
+}
+
+@media (max-height:760px){
+	:root{
+		--cover-img-size: 250px;
+	}
+}
+
 @media (max-width:325px){
 	:root{
 		--font-text-size: 0px;
@@ -47,40 +83,6 @@
 	}
 }
 
-/*播放页自适应*/
-@media (min-width: 800px) {
-	:root {
-		/*按钮自适应*/
-		--botton-size: 60px;
-		--button-size-big: 80px;
-		--button-margin: 10px 20px;
-		--button-margin-big: 0 10px;
-		--progress-margin: 10px 90px 20px;
-		--progress-height: 30px;
-		--button-group-padding: 10px 60px;
-		--button-group-width: 420px;
-		--button-group-radius: 40px;
-		/*--list-display: block;*/
-		/*--player-width: calc(100% - 300px);*/
-	}
-}
-
-@media (max-width: 800px) {
-	:root {
-		/*按钮自适应*/
-		--botton-size: 30px;
-		--button-size-big: 40px;
-		--button-margin: 5px 10px;
-		--button-margin-big: 0 5px;
-		--progress-margin: 5px 20px 20px;
-		--progress-height: 20px;
-		--button-group-padding: 10px 30px;
-		--button-group-width: 210px;
-		--button-group-radius: 20px;
-		/*--list-display: none;*/
-		/*--player-width: 100%;*/
-	}
-}
 
 :root{
 	--color-text: #666;

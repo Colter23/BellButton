@@ -1,21 +1,20 @@
 <template>
-	<div class="music-player">
-		<div class="music-title">
+	<div ref="player" class="music-player">
+		<div ref="title" class="music-title">
 			{{musicTitle}}
 		</div>
-		<div class="music-cover">
-			<img src="../../assets/img/cover1.png" class="cover-img" alt="">
+		<img ref="coverImg" src="../../assets/img/cover1.png" class="cover-img" alt="">
+		<div id="control-panel" ref="control">
+			<div class="progress">
+
+			</div>
+			<div id="control-button-group">
+				<div class="btn"></div>
+				<div class="btn btn-play"></div>
+				<div class="btn"></div>
+			</div>
 		</div>
-		<div class="progress-bar">
-			<div class="progress"></div>
-			<div class="now-time">2:00</div>
-			<div class="count-time">3:00</div>
-		</div>
-		<div class="control-box">
-			<div class="control-item pre-control"></div>
-			<div class="control-item play-control"><i class="fas fa-play"></i></div>
-			<div class="control-item next-control"></div>
-		</div>
+
 	</div>
 </template>
 
@@ -25,108 +24,94 @@
 		data: ()=>({
 			musicTitle:"勾指起誓 - Cover洛天依",
 			cover: ""
-		})
+		}),
+		mounted() {
+			this.changeCoverImgSize()
+			window.addEventListener('resize', ev => {
+				this.changeCoverImgSize()
+			})
+		},
+		methods: {
+			changeCoverImgSize() {
+				let pw = this.$refs.player.offsetWidth;
+				let ph = this.$refs.player.offsetHeight;
+				let ch = this.$refs.control.offsetHeight
+				let th = this.$refs.title.offsetHeight
+				// if (pw <= 300) {
+				this.$refs.coverImg.style.width = pw - 60 + 'px'
+				// }
+				// if (ph <= 540) {
+				this.$refs.coverImg.style.width = ph - ch - th - 60 + 'px'
+				// }
+			}
+		}
 	}
 </script>
 
 <style scoped>
-	.control-box{
+	button {
+		outline: none;
+	}
+	.music-player {
+		position: relative;
+		padding: 30px 0 0 0;
+		height: 100%;
+	}
+	#control-panel {
 		position: absolute;
-		bottom: 50px;
-		left: calc(50% - 210px);
-		width: 420px;
-		/*min-width: 330px;*/
-		height: 100px;
-		background: #dce9f9;
+		width: 100%;
+		padding: 10px 0 40px;
+		bottom: 0;
 		border-radius: 40px;
-		box-shadow: inset -6px -6px 10px -3px rgba(255, 255, 255, 0.6),
-		inset 6px 6px 10px -3px rgba(0,0,0,0.3);
+		background-color: #cde0f9;
 	}
-
-	.control-item{
-		background: #d3e3f8;
-		border-radius: 50%;
-		box-shadow: -6px -6px 10px -3px rgba(255, 255, 255, 0.6),
-		6px 6px 10px -3px rgba(0,0,0,0.4);
-		transition: 0.8s;
+	#control-button-group {
+		margin: 0 auto;
+		padding: var(--button-group-padding);
+		background: #dce9f9;
+		box-shadow: inset 5px 5px 10px #848c95,
+		inset -5px -5px 10px #ffffff;
+		border-radius: var(--button-group-radius);
+		width: var(--button-group-width);
+		overflow: auto;
 	}
-	.control-item:hover{
-		box-shadow: inset -6px -6px 10px -3px rgba(255, 255, 255, 0.6),
-		inset 6px 6px 10px -3px rgba(0,0,0,0.4);
-		transition: 0.8s;
-	}
-	.play-control{
-		position: absolute;
-		bottom: calc(50% - 40px);
-		left: calc(50% - 40px);
-		width: 80px;
-		height: 80px;
-	}
-	.pre-control{
-		position: absolute;
-		bottom: calc(50% - 30px);
-		left: calc(50% - 35%);
-		width: 60px;
-		height: 60px;
-	}
-	.next-control{
-		position: absolute;
-		bottom: calc(50% - 30px);
-		right: calc(50% - 35%);
-		width: 60px;
-		height: 60px;
-	}
-
-	.fa-play{
-		color: #fff;
+	.music-title {
 		font-size: 30px;
-		text-align: center;
-		line-height: 80px;
 	}
-	.music-title{
-		font-size: 30px;
-		margin-top: 30px;
-	}
-	.music-cover{
-		width: 420px;
-		height: 420px;
-		margin: auto;
-		margin-top: 40px;
+	.cover-img {
+		width: 300px;
+		padding: 10px;
+		background-color: #ffffff;
 		border-radius: 50%;
-		background: #fff;
+		margin-top: 10px;
 		box-shadow: -6px -6px 10px -3px rgba(255, 255, 255, 0.6),
 		6px 6px 10px -3px rgba(0,0,0,0.4);
 	}
-
-	.cover-img{
-		width: 400px;
-		height: 400px;
-		border-radius: 50%;
-		margin-top: 10px
-	}
-	.progress-bar{
-		position: absolute;
-		bottom: 180px;
-		left: calc(50% - 40%);
-		width: calc(80%);
-		/*min-width: 330px;*/
-		height: 30px;
-		background: #dce9f9;
-		border-radius: 40px;
-		box-shadow: inset -6px -6px 10px -3px rgba(255, 255, 255, 0.6),
-		inset 6px 6px 10px -3px rgba(0,0,0,0.3);
-	}
-	.progress{
-		position:absolute;
+	.progress {
 		bottom:0;
 		left:0;
-		width: 500px;
-		height: 30px;
+		margin: var(--progress-margin);
+		height: var(--progress-height);
 		background: #b4d3fb;
 		border-radius: 40px;
 		box-shadow: -6px -6px 5px -2px rgba(255, 255, 255, 0.3),
 		6px 6px 5px -2px rgba(0,0,0,0.2);
 		z-index: 1;
+	}
+	.btn {
+		float: left;
+		margin: var(--button-margin);
+		width: var(--botton-size);
+		height: var(--botton-size);
+		border-radius: 50%;
+		background: #d3e3f8;
+		box-shadow: -6px -6px 10px -3px rgba(255, 255, 255, 0.6),
+		6px 6px 10px -3px rgba(0,0,0,0.4);
+	}
+	.btn-play {
+		margin: var(--button-margin-big);
+		width: var(--button-size-big);
+		height: var(--button-size-big);
 	}
 	.now-time{
 		position:absolute;

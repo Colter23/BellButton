@@ -1,6 +1,6 @@
 <template>
 	<div class="bell-music">
-		预览 未完成 只有界面，没有功能，没有自适应
+<!--		预览 未完成 只有界面，没有功能，没有自适应-->
 		<div class="music-box">
 			<div ref="musicleft" class="music-left" >
 				<music-list></music-list>
@@ -20,21 +20,7 @@
 		name: "BellMusic",
 		components: {MusicPlayer, MusicList, MusicWave},
 		methods: {
-
-		},
-		computed: {
-			windowWidth(){
-				// console.log(window.innerWidth)
-				return window.innerWidth;
-			}
-		},
-		watch: {
-			windowWidth(val){
-				console.log(val)
-			}
-		},
-		mounted() {
-			window.addEventListener('resize',ev => {
+			updateRightBoxSize(){
 				if (this.$refs.musicleft.offsetWidth<=330){
 					this.$refs.musicright.style.width = "calc(100% - 300px)";
 				} else {
@@ -43,6 +29,12 @@
 				if (window.innerWidth<=900){
 					this.$refs.musicright.style.width = "100%";
 				}
+			}
+		},
+		mounted() {
+			this.updateRightBoxSize();
+			window.addEventListener('resize',ev => {
+				this.updateRightBoxSize();
 			})
 		}
 	}
@@ -52,6 +44,7 @@
 	.bell-music{
 		font-size: 25px;
 		font-weight: bold;
+		margin-top: 100px;
 	}
 	.music-box{
 		position: relative;
