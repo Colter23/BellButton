@@ -1,11 +1,11 @@
 <template>
 	<div class="bell-album">
 		<div style="margin-bottom: 20px">Bell相册  未完成  敬请期待prpr</div>
-<!--		<img class=" bell-img" src="../../assets/img/bell01.jpg" alt="">-->
+		<!--		<img class=" bell-img" src="../../assets/img/bell01.jpg" alt="">-->
 
 		<div class="grid" >
 			<div class="grid-item" v-for="(item, index) in imges">
-				<img :src="imgSrc(item.path)" style="width: 100%" alt="">
+				<img @load="updated" :src="imgSrc(item.path)" style="width: 100%;" alt="">
 			</div>
 		</div>
 
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-
 	import imges from "assets/imges.json";
 	import Masonry from "masonry-layout";
 	export default {
@@ -27,21 +26,17 @@
 				return require("assets/img/album/"+src);
 			},
 			updated() {
-
+				var grid = document.querySelector(".grid");
+				console.log(grid)
+				var msnry = new Masonry(grid, {
+					// options...
+					columnWidth: 0,
+					itemSelector: ".grid-item",
+					// columnWidth: 200,
+				});
+				console.log(msnry)
 			}
-		},
-		updated() {
-			var grid = document.querySelector(".grid");
-			console.log(grid)
-			var msnry = new Masonry(grid, {
-				// options...
-				columnWidth: 200,
-				itemSelector: ".grid-item",
-				// columnWidth: 200,
-			});
-			console.log(msnry)
 		}
-
 	}
 </script>
 
@@ -55,20 +50,23 @@
 	.img-item{
 		margin: 4px;
 		font-family: Helvetica;
-
 		/*width: 500px;*/
+	}
+	.grid {
+		margin: 0 auto;
+		overflow: hidden;
+		width: 90%;
 	}
 	.img-item img{
 		display: block;
 		width: 100%;
 		height: auto;
 	}
-
-
-
-
-
-
+	.grid-item {
+		padding: 10px 10px 0;
+		float: left;
+		width: var(--img-width);
+	}
 	.bell-img{
 		width: 80%;
 	}
