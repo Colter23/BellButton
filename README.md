@@ -20,8 +20,14 @@
 ## 贡献者
 开发：
 
-- GitHub [Colter23](https://github.com/Colter23)  
+- Colter23  
+  GitHub [Colter23](https://github.com/Colter23)  
   BiliBili [Colter_null](https://space.bilibili.com/32868931)
+
+- 正义desu    
+  Github [justice2001](https://github.com/justice2001)  
+  码云 [zhengyi](https://gitee.com/zhengyi59)  
+  Bilibili [正義desu-null](https://space.bilibili.com/30734570)
   
 
 音频剪辑:
