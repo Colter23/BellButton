@@ -4,7 +4,7 @@
       "name": "傻笑",
       "translation": {
         "zh": "傻笑",
-        "ja": "",
+        "ja": "笑い",
         "en": ""
       },
       "voicelist": [
@@ -13,7 +13,7 @@
           "path": "傻笑01.mp3",
           "translation": {
             "zh": "傻笑01",
-            "ja": "",
+            "ja": "笑い01",
             "en": ""
           }
         },
@@ -22,7 +22,7 @@
           "path": "傻笑02.mp3",
           "translation": {
             "zh": "傻笑02",
-            "ja": "",
+            "ja": "笑い02",
             "en": ""
           }
         },
@@ -31,7 +31,7 @@
           "path": "傻笑03.mp3",
           "translation": {
             "zh": "傻笑03",
-            "ja": "",
+            "ja": "笑い03",
             "en": ""
           }
         },
@@ -40,7 +40,7 @@
           "path": "傻笑04.mp3",
           "translation": {
             "zh": "傻笑04",
-            "ja": "",
+            "ja": "笑い04",
             "en": ""
           }
         },
@@ -49,7 +49,7 @@
           "path": "傻笑05.mp3",
           "translation": {
             "zh": "傻笑05",
-            "ja": "",
+            "ja": "笑い05",
             "en": ""
           }
         },
@@ -58,7 +58,7 @@
           "path": "傻笑07.mp3",
           "translation": {
             "zh": "傻笑06",
-            "ja": "",
+            "ja": "笑い06",
             "en": ""
           }
         }
@@ -68,7 +68,7 @@
       "name": "loli 结婚 prpr",
       "translation": {
         "zh": "loli 结婚 prpr",
-        "ja": "",
+        "ja": "loli 結婚 prpr",
         "en": ""
       },
       "voicelist": [
@@ -77,7 +77,7 @@
           "path": "no loli.mp3",
           "translation": {
             "zh": "no loli",
-            "ja": "",
+            "ja": "no loli",
             "en": ""
           }
         },
@@ -86,7 +86,7 @@
           "path": "快乐的loli~.mp3",
           "translation": {
             "zh": "快乐的loli~",
-            "ja": "",
+            "ja": "快乐的loli~",
             "en": ""
           }
         },
@@ -95,7 +95,7 @@
           "path": "no 结婚.mp3",
           "translation": {
             "zh": "no 结婚",
-            "ja": "",
+            "ja": "no 結婚",
             "en": ""
           }
         },
@@ -104,7 +104,7 @@
           "path": "不结婚.mp3",
           "translation": {
             "zh": "不结婚",
-            "ja": "",
+            "ja": "結婚ない",
             "en": ""
           }
         },
@@ -113,7 +113,7 @@
           "path": "no prpr.mp3",
           "translation": {
             "zh": "no prpr",
-            "ja": "",
+            "ja": "no prpr",
             "en": ""
           }
         },
@@ -122,7 +122,7 @@
           "path": "pr x9.mp3",
           "translation": {
             "zh": "pr * 9",
-            "ja": "",
+            "ja": "pr * 9",
             "en": ""
           }
         },
@@ -131,7 +131,7 @@
           "path": "prpr会变臭.mp3",
           "translation": {
             "zh": "prpr会变臭",
-            "ja": "",
+            "ja": "prpr臭い",
             "en": ""
           }
         }
@@ -141,7 +141,7 @@
       "name": "钉宫三连",
       "translation": {
         "zh": "钉宫三连",
-        "ja": "",
+        "ja": "钉宫三连",
         "en": ""
       },
       "voicelist": [
@@ -150,7 +150,7 @@
           "path": "笨蛋三连.mp3",
           "translation": {
             "zh": "笨蛋三连",
-            "ja": "",
+            "ja": "馬鹿",
             "en": ""
           }
         },
@@ -159,7 +159,7 @@
           "path": "笨蛋三连2.mp3",
           "translation": {
             "zh": "笨蛋三连2",
-            "ja": "",
+            "ja": "馬鹿2",
             "en": ""
           }
         },
@@ -168,7 +168,7 @@
           "path": "讨厌.mp3",
           "translation": {
             "zh": "讨厌",
-            "ja": "",
+            "ja": "嫌い",
             "en": ""
           }
         },
@@ -177,7 +177,7 @@
           "path": "无路赛.mp3",
           "translation": {
             "zh": "无路赛",
-            "ja": "",
+            "ja": "うるさい",
             "en": ""
           }
         },
@@ -186,7 +186,7 @@
           "path": "笨蛋 变态 啰嗦.mp3",
           "translation": {
             "zh": "笨蛋 变态 啰嗦",
-            "ja": "",
+            "ja": "馬鹿 変態 うるさい",
             "en": ""
           },
           "width": 160
@@ -197,7 +197,7 @@
       "name": "梗",
       "translation": {
         "zh": "梗",
-        "ja": "",
+        "ja": "梗",
         "en": ""
       },
       "voicelist": [
@@ -206,7 +206,7 @@
           "path": "bell我不做人了.mp3",
           "translation": {
             "zh": "bell我不做人了",
-            "ja": "",
+            "ja": "bell我不做人了",
             "en": ""
           },
           "width": 160
@@ -216,7 +216,7 @@
           "path": "ko~ko~da~yo~.mp3",
           "translation": {
             "zh": "ko~ko~da~yo~",
-            "ja": "",
+            "ja": "ko~ko~da~yo~",
             "en": ""
           },
           "width": 170
@@ -226,7 +226,7 @@
           "path": "ko~ko~da~yo~2.mp3",
           "translation": {
             "zh": "ko~ko~da~yo~2",
-            "ja": "",
+            "ja": "ko~ko~da~yo~2",
             "en": ""
           },
           "width": 180
@@ -236,7 +236,7 @@
           "path": "你讨厌 小拳拳砸你胸口.mp3",
           "translation": {
             "zh": "你讨厌 小拳拳砸你胸口",
-            "ja": "",
+            "ja": "你讨厌 小拳拳砸你胸口",
             "en": ""
           },
           "width": 230
@@ -247,7 +247,7 @@
       "name": "BellRap",
       "translation": {
         "zh": "BellRap",
-        "ja": "",
+        "ja": "BellRap",
         "en": ""
       },
       "voicelist": [
@@ -256,7 +256,7 @@
           "path": "我爱你 爱着你 就像老鼠爱大米~.mp3",
           "translation": {
             "zh": "我爱你 爱着你 就像老鼠爱大米~",
-            "ja": "",
+            "ja": "我爱你 爱着你 就像老鼠爱大米~",
             "en": ""
           },
           "width": 310
@@ -266,7 +266,7 @@
           "path": "bell奶茶.mp3",
           "translation": {
             "zh": "bell奶茶",
-            "ja": "",
+            "ja": "bellミルクティー",
             "en": ""
           }
         }
@@ -276,7 +276,7 @@
       "name": "日常",
       "translation": {
         "zh": "日常",
-        "ja": "",
+        "ja": "日常",
         "en": ""
       },
       "voicelist": [
@@ -285,7 +285,7 @@
           "path": "打招呼.mp3",
           "translation": {
             "zh": "打招呼",
-            "ja": "",
+            "ja": "挨拶",
             "en": ""
           }
         },
@@ -294,17 +294,17 @@
           "path": "我不是宠物，你是宠物.mp3",
           "translation": {
             "zh": "我不是宠物，你是宠物",
-            "ja": "",
+            "ja": "我不是宠物，你是宠物",
             "en": ""
           },
           "width": 260
         },
         {
-          "name": "c",
+          "name": "DD是bell的宠物",
           "path": "DD是bell的宠物.mp3",
           "translation": {
-            "zh": "我不是宠物，你是宠物",
-            "ja": "",
+            "zh": "DD是bell的宠物",
+            "ja": "DD是bell的宠物",
             "en": ""
           },
           "width": 210
@@ -314,7 +314,7 @@
           "path": "爱的魔力.mp3",
           "translation": {
             "zh": "爱的魔力",
-            "ja": "",
+            "ja": "爱のマジック",
             "en": ""
           }
         },
@@ -323,7 +323,7 @@
           "path": "不要摸我！.mp3",
           "translation": {
             "zh": "不要摸我!",
-            "ja": "",
+            "ja": "触らないで",
             "en": ""
           }
         },
@@ -332,7 +332,7 @@
           "path": "宠物.mp3",
           "translation": {
             "zh": "宠物",
-            "ja": "",
+            "ja": "ペット",
             "en": ""
           }
         },
@@ -341,7 +341,7 @@
           "path": "干杯.mp3",
           "translation": {
             "zh": "干杯",
-            "ja": "",
+            "ja": "乾杯",
             "en": ""
           }
         },
@@ -350,7 +350,7 @@
           "path": "哥哥.mp3",
           "translation": {
             "zh": "哥哥",
-            "ja": "",
+            "ja": "哥哥",
             "en": ""
           }
         },
@@ -359,7 +359,7 @@
           "path": "坏坏客人们.mp3",
           "translation": {
             "zh": "坏坏客人们",
-            "ja": "",
+            "ja": "坏坏客人们",
             "en": ""
           }
         },
@@ -368,7 +368,7 @@
           "path": "开什么玩笑.mp3",
           "translation": {
             "zh": "开什么玩笑",
-            "ja": "",
+            "ja": "ふざけんな",
             "en": ""
           }
         },
@@ -377,7 +377,7 @@
           "path": "老婆.mp3",
           "translation": {
             "zh": "老婆",
-            "ja": "",
+            "ja": "老婆",
             "en": ""
           }
         },
@@ -386,7 +386,7 @@
           "path": "摸头光线.mp3",
           "translation": {
             "zh": "摸头光线",
-            "ja": "",
+            "ja": "摸头光线",
             "en": ""
           }
         },
@@ -395,7 +395,7 @@
           "path": "无所谓.mp3",
           "translation": {
             "zh": "无所谓",
-            "ja": "",
+            "ja": "无所谓",
             "en": ""
           }
         },
@@ -404,7 +404,7 @@
           "path": "擤鼻涕.mp3",
           "translation": {
             "zh": "擤鼻涕",
-            "ja": "",
+            "ja": "擤鼻涕",
             "en": ""
           }
         },
@@ -413,7 +413,7 @@
           "path": "呦咻.mp3",
           "translation": {
             "zh": "呦咻",
-            "ja": "",
+            "ja": "呦咻",
             "en": ""
           }
         },
@@ -422,7 +422,7 @@
           "path": "最喜欢了.mp3",
           "translation": {
             "zh": "最喜欢了",
-            "ja": "",
+            "ja": "大好きです",
             "en": ""
           }
         },
@@ -431,7 +431,7 @@
           "path": "客人们H.mp3",
           "translation": {
             "zh": "客人们H",
-            "ja": "",
+            "ja": "客人们H",
             "en": ""
           }
         },
@@ -440,7 +440,7 @@
           "path": "有意思~.mp3",
           "translation": {
             "zh": "有意思~",
-            "ja": "",
+            "ja": "おもしろい",
             "en": ""
           }
         }
@@ -450,7 +450,7 @@
       "name": "BellMusic 之后会移到相应的板块",
       "translation": {
         "zh": "BellMusic 之后会移到相应的板块",
-        "ja": "",
+        "ja": "BellMusic 之后会移到相应的板块",
         "en": ""
       },
       "voicelist": [
@@ -459,7 +459,7 @@
           "path": "学猫叫.mp3",
           "translation": {
             "zh": "学猫叫",
-            "ja": "",
+            "ja": "喵喵song",
             "en": ""
           }
         },
@@ -468,7 +468,7 @@
           "path": "勾指起誓.mp3",
           "translation": {
             "zh": "勾指起誓",
-            "ja": "",
+            "ja": "点点song",
             "en": ""
           }
         }

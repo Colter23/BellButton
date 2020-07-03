@@ -1,6 +1,6 @@
 <template>
 	<div class="bell-album">
-<!--		<div style="margin-bottom: 20px">Bell相册    敬请期待prpr</div>-->
+		<div style="margin-bottom: 20px">Bell相册  未完成  敬请期待prpr</div>
 <!--		<img class=" bell-img" src="../../assets/img/bell01.jpg" alt="">-->
 
 		<div class="grid" >

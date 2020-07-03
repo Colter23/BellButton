@@ -1,8 +1,8 @@
 <template>
 	<div class="about">
 		<div class="text-box">
-			<p>日语暂时还没有翻译</p>
-			<p>有翻译man吗。。我要吃人</p>
+			<p>日语机翻</p>
+			<p>日本语Google翻訳</p>
 			<p>
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#icon-bell4"></use>

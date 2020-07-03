@@ -105,8 +105,8 @@
 		height: var(--botton-size);
 		border-radius: 50%;
 		background: #d3e3f8;
-		box-shadow:  5px 5px 10px #a5b1c1,
-		-5px -5px 10px #ffffff;
+		box-shadow: -6px -6px 10px -3px rgba(255, 255, 255, 0.6),
+		6px 6px 10px -3px rgba(0,0,0,0.4);
 	}
 	.btn-play {
 		margin: var(--button-margin-big);
