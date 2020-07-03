@@ -36,9 +36,6 @@
 					// columnWidth: 200,
 				});
 				console.log(msnry)
-			},
-			debounce(fn, delay) {
-				
 			}
 
 		}
