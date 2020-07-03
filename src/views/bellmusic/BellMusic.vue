@@ -3,10 +3,10 @@
 <!--		预览 未完成 只有界面，没有功能，没有自适应-->
 		<div class="music-box">
 			<div ref="musicleft" class="music-left" >
-				<music-list></music-list>
+				<music-list @currentMusic="changeMusic"></music-list>
 			</div>
 			<div ref="musicright" class="music-right" >
-				<music-player></music-player>
+				<music-player :playMusic="currentMusic"></music-player>
 			</div>
 		</div>
 	</div>
@@ -19,7 +19,13 @@
 	export default {
 		name: "BellMusic",
 		components: {MusicPlayer, MusicList, MusicWave},
+		data: ()=>({
+			currentMusic: null
+		}),
 		methods: {
+			changeMusic(music){
+				this.currentMusic = music;
+			},
 			updateRightBoxSize(){
 				if (this.$refs.musicleft.offsetWidth<=330){
 					this.$refs.musicright.style.width = "calc(100% - 300px)";

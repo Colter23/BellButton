@@ -1,7 +1,7 @@
 <template>
 	<div class="music-player" ref="musicplayer">
 		<div class="music-title">
-			{{musicTitle}}
+			{{musicName}}
 		</div>
 
 		<img src="../../assets/img/cover1.png" class="cover-img" alt="">
@@ -9,11 +9,14 @@
 		<div class="progress-bar">
 			<div class="progress"></div>
 			<div class="now-time">2:00</div>
-			<div class="count-time">3:00</div>
+			<div class="count-time">{{audio.duration}}</div>
 		</div>
 		<div class="control-box" ref="controlbox">
 			<div class="control-item pre-control"><i class="fas fa-step-backward"></i></div>
-			<div class="control-item play-control"><i class="fas fa-play"></i></div>
+			<div class="control-item play-control" @click="audioSwitch">
+				<i class="fas fa-play" v-show="!isPlay"></i>
+				<i class="fas fa-pause" v-show="isPlay"></i>
+			</div>
 			<div class="control-item next-control"><i class="fas fa-step-forward"></i></div>
 		</div>
 	</div>
@@ -22,11 +25,89 @@
 <script>
 	export default {
 		name: "MusicPlayer",
+		props: {
+			playMusic: {}
+		},
 		data: ()=>({
 			musicTitle:"勾指起誓 - Cover洛天依",
-			cover: ""
+			cover: "",
+			isPlay: false,
+
+			//音频
+			audio: Object,
+			context: Object,
+			//分析机
+			analyser: Object,
+			//音量节点
+			volumeNode: Object,
 		}),
+		computed: {
+			musicName(){
+				return this.playMusic?this.playMusic.name:""
+			},
+			musicPath(){
+				return this.playMusic?require("assets/audio/"+this.playMusic.path):""
+			}
+		},
+		watch: {
+			musicPath(val){
+				this.audio = new Audio(val);
+
+				this.context = new(window.AudioContext || window.webkitAudioContext)();
+				//创建媒体源
+				let audioSrc = this.context.createMediaElementSource(this.audio);
+				//创建分析机
+				this.analyser = this.context.createAnalyser();
+				//创建音量节点
+				this.volumeNode = this.context.createGain();
+				//更改默认音量
+				this.volumeNode.gain.value = 0.5;
+
+				//媒体源与分析机连接
+				audioSrc.connect(this.analyser);
+				//分析机与音量节点连接
+				this.analyser.connect(this.volumeNode);
+				//音量节点与输出目标连接
+				this.volumeNode.connect(this.context.destination);
+
+				this.audioPlay();
+
+				this.audio.addEventListener("loadedmetadata", function() {
+					// console.log(this.audio)
+					console.log(this.audio.duration)
+				})
+
+				this.audio.addEventListener('ended',function () {
+					this.isPlay = false;
+				},false)
+			}
+		},
 		methods: {
+			//播放状态切换
+			audioSwitch() {
+				if (this.audio.paused) {
+					this.audioPlay();
+				} else {
+					this.audioPause();
+				}
+			},
+			audioPlay() {
+				if (this.audio.paused) {
+					if (this.context.resume()!=null){
+						this.context.resume().then(() => {
+							this.audio.play();
+						});
+					}else {
+						this.audio.play();
+					}
+				}
+				this.isPlay = true;
+			},
+			audioPause() {
+				this.audio.pause();
+				this.isPlay = false;
+			},
+
 			updateControlbBoxSize(){
 				if (this.$refs.musicplayer.offsetWidth*0.6<=300){
 					this.$refs.controlbox.style.left = "calc(50% - 40%)";
@@ -164,7 +245,8 @@
 		text-align: center;
 		margin-left: 3px;
 	}
-	.fa-play{
+	.fa-play,
+	.fa-pause{
 		font-size: 30px;
 		line-height: calc(var(--play-control-size) + 2px);
 	}

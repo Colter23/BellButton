@@ -27,14 +27,14 @@
 			},
 			updated() {
 				var grid = document.querySelector(".grid");
-				console.log(grid)
+				// console.log(grid)
 				var msnry = new Masonry(grid, {
 					// options...
 					columnWidth: 0,
 					itemSelector: ".grid-item",
 					// columnWidth: 200,
 				});
-				console.log(msnry)
+				// console.log(msnry)
 			}
 		}
 	}

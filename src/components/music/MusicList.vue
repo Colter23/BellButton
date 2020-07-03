@@ -4,8 +4,9 @@
 			<div class="music-item-title">
 				{{music.name}}
 			</div>
-			<span class="control-item" @click="clickPlay(index)">
-				<i class="fas fa-play"></i>
+			<span class="control-item" @click="clickPlay(index,music)">
+				<i class="fas fa-play" v-show="playIndex!==index"></i>
+				<i class="fas fa-pause" v-show="playIndex===index"></i>
 			</span>
 		</div>
 	</div>
@@ -18,12 +19,13 @@
 		data(){
 			return{
 				musicList: Music.groups[0].musiclist,
-				playIndex: 1
+				playIndex: -1
 			}
 		},
 		methods: {
-			clickPlay(index){
+			clickPlay(index,music){
 				this.playIndex = index;
+				this.$emit('currentMusic',music);
 			}
 		}
 	}
@@ -96,5 +98,8 @@
 		font-size: 30px;
 		text-align: center;
 		line-height: 80px;
+	}
+	.fa-pause{
+		margin-left: -5px;
 	}
 </style>
