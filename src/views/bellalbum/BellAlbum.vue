@@ -5,7 +5,7 @@
 
 		<div class="grid" >
 			<div class="grid-item" v-for="(item, index) in imges">
-				<img :src="imgSrc(item.path)" style="width: 100%" alt="">
+				<img @load="updated" :src="imgSrc(item.path)" style="width: 100%;" alt="">
 			</div>
 		</div>
 
@@ -27,19 +27,20 @@
 				return require("assets/img/album/"+src);
 			},
 			updated() {
-
+				var grid = document.querySelector(".grid");
+				console.log(grid)
+				var msnry = new Masonry(grid, {
+					// options...
+					columnWidth: 0,
+					itemSelector: ".grid-item",
+					// columnWidth: 200,
+				});
+				console.log(msnry)
+			},
+			debounce(fn, delay) {
+				
 			}
-		},
-		updated() {
-			var grid = document.querySelector(".grid");
-			console.log(grid)
-			var msnry = new Masonry(grid, {
-				// options...
-				columnWidth: 200,
-				itemSelector: ".grid-item",
-				// columnWidth: 200,
-			});
-			console.log(msnry)
+
 		}
 
 	}
@@ -58,12 +59,21 @@
 
 		/*width: 500px;*/
 	}
+	.grid {
+		margin: 0 auto;
+		overflow: hidden;
+		width: 90%;
+	}
 	.img-item img{
 		display: block;
 		width: 100%;
 		height: auto;
 	}
-
+	.grid-item {
+		padding: 10px 10px 0;
+		float: left;
+		width: var(--img-width);
+	}
 
 
 

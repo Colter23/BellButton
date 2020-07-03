@@ -1,5 +1,6 @@
 @import './normalize.css';
 
+
 @media (min-width:1055px){
 	:root{
 		--font-text-size: 25px;
@@ -50,6 +51,7 @@
 /*播放页自适应*/
 @media (min-width: 800px) {
 	:root {
+		--img-width: 33%;
 		/*按钮自适应*/
 		--botton-size: 60px;
 		--button-size-big: 80px;
@@ -67,6 +69,7 @@
 
 @media (max-width: 800px) {
 	:root {
+		--img-width: 50%;
 		/*按钮自适应*/
 		--botton-size: 30px;
 		--button-size-big: 40px;
