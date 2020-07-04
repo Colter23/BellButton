@@ -22,7 +22,7 @@
 			</div>
 			<div class="control-item next-control"><i class="fas fa-step-forward"></i></div>
 		</div>
-		<audio :src="musicPath" ref="audio" id="audio"></audio>
+		<audio @loadedmetadata="loaded" src="musicPath" ref="audio" id="audio"></audio>
 	</div>
 </template>
 
@@ -67,7 +67,6 @@
 			musicPath(){
 
 				this.audioPause();
-				this.musicLength = this.audio.duration;
 				this.audioPlay();
 
 
@@ -84,6 +83,10 @@
 			}
 		},
 		methods: {
+			// 加载完成初始化
+			loaded() {
+				this.musicLength = this.$refs.audio.duration;
+			},
 			//更新进度条
 			updateProgress(){
 				if (this.audio.currentTime === this.musicLength) {
@@ -143,7 +146,7 @@
 
 			//this.audio = new Audio(val);
 			// this.audio = this.$refs.audio;
-			this.audio = document.getElementById("audio");
+			this.audio = this.$refs.audio
 
 			this.context = new(window.AudioContext || window.webkitAudioContext)();
 			//创建媒体源
