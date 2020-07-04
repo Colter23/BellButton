@@ -445,34 +445,6 @@
           }
         }
       ]
-    },
-    {
-      "name": "BellMusic 之后会移到相应的板块",
-      "translation": {
-        "zh": "BellMusic 之后会移到相应的板块",
-        "ja": "BellMusic 之后会移到相应的板块",
-        "en": ""
-      },
-      "voicelist": [
-        {
-          "name": "学猫叫",
-          "path": "学猫叫.mp3",
-          "translation": {
-            "zh": "学猫叫",
-            "ja": "喵喵song",
-            "en": ""
-          }
-        },
-        {
-          "name": "勾指起誓",
-          "path": "勾指起誓.mp3",
-          "translation": {
-            "zh": "勾指起誓",
-            "ja": "点点song",
-            "en": ""
-          }
-        }
-      ]
     }
   ]
 }

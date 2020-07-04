@@ -3,6 +3,7 @@
 		<div class="text-box">
 			<p>日语机翻</p>
 			<p>日本語Google翻訳</p>
+			<p>我不行了。。快弃坑了</p>
 			<p>
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#icon-bell4"></use>
