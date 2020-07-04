@@ -32,7 +32,7 @@
 		data: ()=>({
 			musicTitle:"勾指起誓 - Cover洛天依",
 			cover: "",
-			audioPath: this.musicPath();
+			audioPath: this.musicPath(),
 			isPlay: false,
 
 			//音频

@@ -4,12 +4,15 @@
 			{{musicName}}
 		</div>
 
-		<img src="../../assets/img/cover1.png" class="cover-img" alt="">
+		<div class="cover-box">
+			<img src="../../assets/img/cover1.png" class="cover-img turn" alt="" :class="isPlay?'running':'paused'">
+		</div>
+
 
 		<div class="progress-bar">
-			<div class="progress"></div>
-			<div class="now-time">2:00</div>
-			<div class="count-time">{{audio.duration}}</div>
+			<div class="progress" ref="progress"></div>
+			<div class="now-time">{{nowTime | formatTime}}</div>
+			<div class="count-time">{{musicLength | formatTime}}</div>
 		</div>
 		<div class="control-box" ref="controlbox">
 			<div class="control-item pre-control"><i class="fas fa-step-backward"></i></div>
@@ -19,6 +22,7 @@
 			</div>
 			<div class="control-item next-control"><i class="fas fa-step-forward"></i></div>
 		</div>
+		<audio :src="musicPath" ref="audio" id="audio"></audio>
 	</div>
 </template>
 
@@ -32,57 +36,63 @@
 			musicTitle:"勾指起誓 - Cover洛天依",
 			cover: "",
 			isPlay: false,
+			musicLength: 0,
+			nowTime: 0,
+			//计时器
+			timer: Object,
 
 			//音频
 			audio: Object,
 			context: Object,
+			audioSrc: Object,
 			//分析机
 			analyser: Object,
 			//音量节点
 			volumeNode: Object,
 		}),
+		filters: {
+			formatTime(val){
+				return parseInt(val/60)+":"+(Math.round(val%60)<10?'0'+Math.round(val%60):Math.round(val%60));
+			}
+		},
 		computed: {
 			musicName(){
 				return this.playMusic?this.playMusic.name:""
 			},
 			musicPath(){
-				return this.playMusic?require("assets/audio/"+this.playMusic.path):""
+				return this.playMusic?require("assets/music/"+this.playMusic.path):""
 			}
 		},
 		watch: {
-			musicPath(val){
-				this.audio = new Audio(val);
+			musicPath(){
 
-				this.context = new(window.AudioContext || window.webkitAudioContext)();
-				//创建媒体源
-				let audioSrc = this.context.createMediaElementSource(this.audio);
-				//创建分析机
-				this.analyser = this.context.createAnalyser();
-				//创建音量节点
-				this.volumeNode = this.context.createGain();
-				//更改默认音量
-				this.volumeNode.gain.value = 0.5;
-
-				//媒体源与分析机连接
-				audioSrc.connect(this.analyser);
-				//分析机与音量节点连接
-				this.analyser.connect(this.volumeNode);
-				//音量节点与输出目标连接
-				this.volumeNode.connect(this.context.destination);
-
+				this.audioPause();
+				this.musicLength = this.audio.duration;
 				this.audioPlay();
 
-				this.audio.addEventListener("loadedmetadata", function() {
-					// console.log(this.audio)
-					console.log(this.audio.duration)
-				})
+
 
 				this.audio.addEventListener('ended',function () {
 					this.isPlay = false;
-				},false)
+				},false);
+
+				if (this.timer) {
+					this.nowTime = 0;
+					clearInterval(this.timer);
+				};
+				this.timer = setInterval(this.updateProgress,1000);
 			}
 		},
 		methods: {
+			//更新进度条
+			updateProgress(){
+				if (this.audio.currentTime === this.musicLength) {
+					clearInterval(this.timer);
+				}
+				this.nowTime = Math.round(this.audio.currentTime);
+				this.$refs.progress.style.width = this.musicLength?
+						(Math.round(this.audio.currentTime)/this.musicLength) *100 + "%":"0%";
+			},
 			//播放状态切换
 			audioSwitch() {
 				if (this.audio.paused) {
@@ -128,7 +138,32 @@
 			this.updateControlbBoxSize();
 			window.addEventListener('resize',ev => {
 				this.updateControlbBoxSize();
-			})
+			});
+
+
+			//this.audio = new Audio(val);
+			// this.audio = this.$refs.audio;
+			this.audio = document.getElementById("audio");
+
+			this.context = new(window.AudioContext || window.webkitAudioContext)();
+			//创建媒体源
+			this.audioSrc = this.context.createMediaElementSource(this.audio);
+			//创建分析机
+			this.analyser = this.context.createAnalyser();
+			//创建音量节点
+			this.volumeNode = this.context.createGain();
+			//更改默认音量
+			this.volumeNode.gain.value = 0.1;
+
+			//媒体源与分析机连接
+			this.audioSrc.connect(this.analyser);
+			//分析机与音量节点连接
+			this.analyser.connect(this.volumeNode);
+			//音量节点与输出目标连接
+			this.volumeNode.connect(this.context.destination);
+
+			// this.audio.load();
+
 		}
 	}
 </script>
@@ -143,18 +178,34 @@
 		font-size: var(--music-title-size);
 	}
 
-	.cover-img{
+	.cover-box{
 		width: var(--cover-img-size);
 		height: var(--cover-img-size);
 		margin: auto;
 		margin-top: 40px;
-		padding: 10px;
-		border-radius: 50%;
 		background: #fff;
+		border-radius: 50%;
 		box-shadow: -6px -6px 10px -3px rgba(255, 255, 255, 0.6),
 		6px 6px 10px -3px rgba(0,0,0,0.4);
 	}
+	.cover-img{
+		width: calc(var(--cover-img-size) - 20px);
+		height: calc(var(--cover-img-size) - 20px);
+		margin-top: 10px;
+		border-radius: 50%;
+	}
+	.turn{
+		animation:turn 7s linear infinite;
+	}
+	.running{
+		animation-play-state:running;
+	}
+	.paused{
+		animation-play-state:paused;
+	}
+
 	.progress-bar{
+		overflow: hidden;
 		position: absolute;
 		bottom: var(--progress-bar-bottom);
 		left: calc(50% - 40%);
@@ -170,12 +221,13 @@
 		position:absolute;
 		bottom:0;
 		left:0;
-		width: calc(60%);
+		width: 0%;
 		height: var(--progress-bar-height);
 		background: #b4d3fb;
 		border-radius: 40px;
 		box-shadow: -6px -6px 5px -2px rgba(255, 255, 255, 0.3),
 		6px 6px 5px -2px rgba(0,0,0,0.2);
+		transition: 1s;
 		z-index: 1;
 	}
 	.now-time{
@@ -256,5 +308,13 @@
 		line-height: calc(var(--prenext-control-size) + 2px);
 	}
 
+
+	@keyframes turn{
+		0%{-webkit-transform:rotate(0deg);}
+		25%{-webkit-transform:rotate(90deg);}
+		50%{-webkit-transform:rotate(180deg);}
+		75%{-webkit-transform:rotate(270deg);}
+		100%{-webkit-transform:rotate(360deg);}
+	}
 
 </style>
