@@ -82,6 +82,7 @@
 		font-size: 25px;
 		font-weight: bold;
 		margin-top: 100px;
+		margin-bottom: 50px;
 	}
 	.music-box{
 		position: relative;
@@ -120,7 +121,7 @@
 		/*min-width: 330px;*/
 		height: 100%;
 		background: #e4effe;
-		transition: 0.2s;
+		/*transition: 0.2s;*/
 		z-index: 20;
 	}
 

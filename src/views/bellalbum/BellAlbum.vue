@@ -4,8 +4,9 @@
 		<!--		<img class=" bell-img" src="../../assets/img/bell01.jpg" alt="">-->
 
 		<div class="grid" >
-			<div class="grid-item" v-for="(item, index) in imges">
+			<div class="grid-item" v-for="(item, index) in imges" @mouseenter="showAuthor=true" @mouseleave="showAuthor=false">
 				<img @load="updated" :src="imgSrc(item.path)" style="width: 100%;" alt="">
+				<span class="author" v-show="showAuthor">{{item.author}}</span>
 			</div>
 		</div>
 
@@ -19,7 +20,8 @@
 	export default {
 		name: "BellAlbum",
 		data: () => ({
-			imges: imges.groups[0].imglist
+			imges: imges.groups[0].imglist,
+			showAuthor: false
 		}),
 		methods: {
 			imgSrc(src){
@@ -63,10 +65,22 @@
 		height: auto;
 	}
 	.grid-item {
+		position: relative;
 		padding: 10px 10px 0;
 		float: left;
 		width: var(--img-width);
 	}
+
+	.author{
+		position: absolute;
+		bottom: 5px;
+		right: 10px;
+		color: #75bbea;
+		font-size: 20px;
+	}
+
+
+
 	.bell-img{
 		width: 80%;
 	}

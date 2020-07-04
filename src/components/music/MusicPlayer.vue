@@ -159,7 +159,7 @@
 			//创建音量节点
 			this.volumeNode = this.context.createGain();
 			//更改默认音量
-			this.volumeNode.gain.value = 0.1;
+			this.volumeNode.gain.value = 0.3;
 
 			//媒体源与分析机连接
 			this.audioSrc.connect(this.analyser);

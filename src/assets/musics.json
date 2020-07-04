@@ -4,76 +4,92 @@
       "name": "可爱",
       "musiclist": [
         {
-          "name": "勾指起誓 - Cover洛天依",
+          "name": "勾指起誓",
           "path": "勾指起誓.mp3"
-        },
-        {
-          "name": "勾指起誓 - warma",
-          "path": "勾指起誓-warma.mp3"
-        },
-        {
-          "name": "学猫叫",
-          "path": "学猫叫.mp3"
         },
         {
           "name": "ふわふわ",
           "path": "ふわふわ.mp3"
         },
         {
-          "name": "伽蓝经",
-          "path": "伽蓝经.mp3"
-        },
-        {
-          "name": "demo",
-          "path": "demo.mp3"
-        },
-        {
-          "name": "勾指起誓 - Cover洛天依",
-          "path": "勾指起誓.mp3"
-        },
-        {
-          "name": "勾指起誓 - warma",
-          "path": "勾指起誓-warma.mp3"
-        },
-        {
           "name": "学猫叫",
           "path": "学猫叫.mp3"
         },
         {
-          "name": "ふわふわ",
-          "path": "ふわふわ.mp3"
+          "name": "桃太郎",
+          "path": "桃太郎.mp3"
         },
         {
-          "name": "伽蓝经",
-          "path": "伽蓝经.mp3"
+          "name": "打上花火",
+          "path": "打上花火.mp3"
         },
         {
-          "name": "demo",
-          "path": "demo.mp3"
+          "name": "Secret Base",
+          "path": "Secret Base~君がくれたもの~.mp3"
         },
         {
-          "name": "勾指起誓 - Cover洛天依",
-          "path": "勾指起誓.mp3"
+          "name": "pretender",
+          "path": "pretender.mp3"
         },
         {
-          "name": "勾指起誓 - warma",
-          "path": "勾指起誓-warma.mp3"
+          "name": "白金disco",
+          "path": "白金disco.mp3"
         },
         {
-          "name": "学猫叫",
-          "path": "学猫叫.mp3"
+          "name": "Lemon",
+          "path": "Lemon.mp3"
         },
         {
-          "name": "ふわふわ",
-          "path": "ふわふわ.mp3"
+          "name": "口胡开关",
+          "path": "口胡开关.mp3"
         },
         {
-          "name": "伽蓝经",
-          "path": "伽蓝经.mp3"
+          "name": "千本桜",
+          "path": "千本桜.mp3"
         },
         {
-          "name": "demo",
-          "path": "demo.mp3"
+          "name": "おちゃめ機能",
+          "path": "おちゃめ機能.mp3"
+        },
+        {
+          "name": "妄想感傷代償連盟",
+          "path": "妄想感傷代償連盟.mp3"
+        },
+        {
+          "name": "Don’t say lazy",
+          "path": "Don’ t say lazy.mp3"
+        },
+        {
+          "name": "bellA梦",
+          "path": "bell啦A梦.mp3"
+        },
+        {
+          "name": "12funclub",
+          "path": "12funclub.mp3"
+        },
+        {
+          "name": "金曜日のおはよう",
+          "path": "金曜日のおはよう.mp3"
+        },
+        {
+          "name": "私、アイドル宣言 ",
+          "path": "私、アイドル宣言 .mp3"
+        },
+        {
+          "name": "新宝島",
+          "path": "新宝島.mp3"
+        },
+        {
+          "name": "锤子之歌",
+          "path": "锤子之歌.mp3"
+        },
+        {
+          "name": "world is mine",
+          "path": "world is mine.mp3"
+        },
+        {
+          "name": "Cutie Panther",
+          "path": "Cutie Panther.mp3"
         }
       ]
     }
