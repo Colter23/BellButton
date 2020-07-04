@@ -16,10 +16,13 @@
 	import Music from "assets/musics.json"
 	export default {
 		name: "MusicList",
+		props: {
+			musicChange: 0
+		},
 		data(){
 			return{
 				musicList: Music.groups[0].musiclist,
-				playIndex: -1
+				playIndex: -1,
 			}
 		},
 		methods: {
@@ -27,11 +30,34 @@
 				this.playIndex = index;
 				this.$emit('currentMusic',music);
 			}
+		},
+		watch: {
+			musicChange(val){
+				if (val<0&&this.playIndex>=0){
+					if (--this.playIndex<0)
+						this.playIndex = this.musicList.length-1;
+					this.$emit('changeSucceed');
+					this.$emit('currentMusic',this.musicList[this.playIndex]);
+				}
+				if (val>0&&this.playIndex>=0){
+					if (++this.playIndex>this.musicList.length-1)
+						this.playIndex = 0;
+					this.$emit('changeSucceed');
+					this.$emit('currentMusic',this.musicList[this.playIndex]);
+				}
+			}
 		}
 	}
 </script>
 
 <style scoped>
+	.music-list{
+		overflow-y: scroll;
+		height: 100%;
+	}
+	.music-list::-webkit-scrollbar {
+		display: none
+	}
 	.music-item{
 		margin: 10px 20px;
 		width: 80%;

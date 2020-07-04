@@ -8,20 +8,21 @@
 			<img src="../../assets/img/cover1.png" class="cover-img turn" alt="" :class="isPlay?'running':'paused'">
 		</div>
 
-
 		<div class="progress-bar">
 			<div class="progress" ref="progress"></div>
 			<div class="now-time">{{nowTime | formatTime}}</div>
 			<div class="count-time">{{musicLength | formatTime}}</div>
 		</div>
+
 		<div class="control-box" ref="controlbox">
-			<div class="control-item pre-control"><i class="fas fa-step-backward"></i></div>
+			<div class="control-item pre-control" @click="preMusic"><i class="fas fa-step-backward"></i></div>
 			<div class="control-item play-control" @click="audioSwitch">
 				<i class="fas fa-play" v-show="!isPlay"></i>
 				<i class="fas fa-pause" v-show="isPlay"></i>
 			</div>
-			<div class="control-item next-control"><i class="fas fa-step-forward"></i></div>
+			<div class="control-item next-control" @click="nextMusic"><i class="fas fa-step-forward"></i></div>
 		</div>
+
 		<audio @loadedmetadata="loaded" @ended="ended" :src="musicPath" ref="audio" id="audio"></audio>
 	</div>
 </template>
@@ -118,6 +119,13 @@
 				this.isPlay = false;
 			},
 
+			preMusic(){
+				this.$emit('preMusic')
+			},
+			nextMusic(){
+				this.$emit('nextMusic')
+			},
+
 			updateControlbBoxSize(){
 				if (this.$refs.musicplayer.offsetWidth*0.6<=300){
 					this.$refs.controlbox.style.left = "calc(50% - 40%)";
@@ -131,7 +139,6 @@
 				} else {
 					this.$refs.controlbox.style.height = "100px";
 				}
-
 			}
 		},
 		mounted() {
