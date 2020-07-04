@@ -25,7 +25,7 @@
 		}),
 		methods: {
 			imgSrc(src){
-				return require("assets/img/album/"+src);
+				return "http://img.mczhengyi.top/BellButton/" + src + "!web";
 			},
 			updated() {
 				var grid = document.querySelector(".grid");
