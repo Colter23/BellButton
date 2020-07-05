@@ -24,12 +24,16 @@
 
 @media (min-width: 900px) {
 	:root{
+		--img-width: 33%;
+
 		--list-display: block;
 		--phone-list-display: none;
 	}
 }
 @media (max-width: 900px) {
 	:root{
+		--img-width: 50%;
+
 		--list-display: none;
 		--phone-list-display: block;
 	}
@@ -83,43 +87,6 @@
 		--font-icon-size: 20px;
 
 		--navbar-width: 40px;
-	}
-}
-
-/*播放页自适应*/
-@media (min-width: 800px) {
-	:root {
-		--img-width: 33%;
-		/*按钮自适应*/
-		--botton-size: 60px;
-		--button-size-big: 80px;
-		--button-margin: 10px 20px;
-		--button-margin-big: 0 10px;
-		--progress-margin: 10px 90px 20px;
-		--progress-height: 30px;
-		--button-group-padding: 10px 60px;
-		--button-group-width: 420px;
-		--button-group-radius: 40px;
-		/*--list-display: block;*/
-		/*--player-width: calc(100% - 300px);*/
-	}
-}
-
-@media (max-width: 800px) {
-	:root {
-		--img-width: 50%;
-		/*按钮自适应*/
-		--botton-size: 30px;
-		--button-size-big: 40px;
-		--button-margin: 5px 10px;
-		--button-margin-big: 0 5px;
-		--progress-margin: 5px 20px 20px;
-		--progress-height: 20px;
-		--button-group-padding: 10px 30px;
-		--button-group-width: 210px;
-		--button-group-radius: 20px;
-		/*--list-display: none;*/
-		/*--player-width: 100%;*/
 	}
 }
 

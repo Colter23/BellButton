@@ -13,7 +13,9 @@
 </template>
 
 <script>
+
 	import Music from "assets/musics.json"
+
 	export default {
 		name: "MusicList",
 		props: {
@@ -64,9 +66,7 @@
 		height: 60px;
 		font-size: 20px;
 		padding-right: 10px;
-		/*background: #000;*/
 		line-height: 60px;
-		/*vertical-align: middle;*/
 	}
 	.music-item-title{
 		vertical-align: middle;
@@ -77,13 +77,11 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		/*background: #000;*/
 	}
 	.music-item span{
 		vertical-align: middle;
 		display: inline-block;
 		margin-top: -3px;
-		/*margin-left: 20px;*/
 		padding-left: 5px;
 		line-height: 30px;
 		width: 50px;
@@ -108,11 +106,6 @@
 		6px 6px 10px -3px rgba(0,0,0,0.4);
 		transition: 0.8s;
 	}
-	/*.control-item:hover{*/
-	/*	box-shadow: inset -6px -6px 10px -3px rgba(255, 255, 255, 0.6),*/
-	/*	inset 6px 6px 10px -3px rgba(0,0,0,0.4);*/
-	/*	transition: 0.8s;*/
-	/*}*/
 	.control-item:active{
 		box-shadow: inset -6px -6px 10px -3px rgba(255, 255, 255, 0.6),
 		inset 6px 6px 10px -3px rgba(0,0,0,0.4);

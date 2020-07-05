@@ -14,8 +14,8 @@
 - [ViViD FanBox](https://vividnia.fanbox.cc/)
 - [ViViD Booth](https://vividnia.booth.pm/)
 
-## 正在进行的模块: BellMusic
-## 未开发的模块: BellAlbum  BellVideo
+### BellVideo弃坑
+### 目前所有模块的基本功能做完，之后不会有大的更新
 
 ## 贡献者
 开发：

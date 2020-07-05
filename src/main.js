@@ -7,10 +7,6 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import 'assets/iconfont/iconfont'
 
 
-
-
-
-
 Vue.config.productionTip = false
 
 document.title = "猫芒ベル-Bell"

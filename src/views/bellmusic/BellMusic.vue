@@ -1,6 +1,5 @@
 <template>
 	<div class="bell-music">
-<!--		预览 未完成 只有界面，没有功能，没有自适应-->
 		<div class="music-box">
 
 			<div class="phone-list-button" @click="showList">
@@ -23,9 +22,11 @@
 </template>
 
 <script>
+
 	import MusicWave from "components/music/MusicWave";
 	import MusicList from "components/music/MusicList";
 	import MusicPlayer from "components/music/MusicPlayer";
+
 	export default {
 		name: "BellMusic",
 		components: {MusicPlayer, MusicList, MusicWave},
@@ -40,6 +41,7 @@
 				this.currentMusic = music;
 				this.showList('false');
 			},
+			//手机音乐列表显示
 			showList(val){
 				if (val&&val==='false'){
 					this.phoneListShow = false;
@@ -61,7 +63,6 @@
 						this.$refs.musicright.style.width = "71%";
 					}
 				}
-
 				if (window.innerWidth<=900){
 					this.$refs.musicright.style.width = "100%";
 					this.isPhone = true;
@@ -117,11 +118,8 @@
 		top: 0;
 		left: 0;
 		width: 0%;
-		/*max-width: 330px;*/
-		/*min-width: 330px;*/
 		height: 100%;
 		background: #e4effe;
-		/*transition: 0.2s;*/
 		z-index: 20;
 	}
 
@@ -131,7 +129,6 @@
 		left: 0;
 		display: var(--list-display);
 		width: 32%;
-		/*max-width: 330px;*/
 		min-width: 330px;
 		height: 100%;
 		background: #e4effe;

@@ -1,19 +1,23 @@
 <template>
 	<div class="music-player" ref="musicplayer">
+		<!--音乐标题-->
 		<div class="music-title">
 			{{musicName}}
 		</div>
 
+		<!--专辑图-->
 		<div class="cover-box">
 			<img src="../../assets/img/cover1.png" class="cover-img turn" alt="" :class="isPlay?'running':'paused'">
 		</div>
 
+		<!--进度条-->
 		<div class="progress-bar">
 			<div class="progress" ref="progress"></div>
 			<div class="now-time">{{nowTime | formatTime}}</div>
 			<div class="count-time">{{musicLength | formatTime}}</div>
 		</div>
 
+		<!--控制按钮-->
 		<div class="control-box" ref="controlbox">
 			<div class="control-item pre-control" @click="preMusic"><i class="fas fa-step-backward"></i></div>
 			<div class="control-item play-control" @click="audioSwitch">
@@ -34,7 +38,6 @@
 			playMusic: {}
 		},
 		data: ()=>({
-			musicTitle:"勾指起誓 - Cover洛天依",
 			cover: "",
 			isPlay: false,
 			musicLength: 0,
@@ -313,7 +316,6 @@
 		font-size: 25px;
 		line-height: calc(var(--prenext-control-size) + 2px);
 	}
-
 
 	@keyframes turn{
 		0%{-webkit-transform:rotate(0deg);}

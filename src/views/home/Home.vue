@@ -37,59 +37,60 @@
       </div>
       <div style="margin-bottom: 10px; color: #a6a6a6; font-size: 20px">{{$t("home.follow.before")}}<del>prpr</del>{{$t("home.follow.after")}}</div>
       <a href="https://icp.gov.moe" target="_blank" style="font-size: 17px; color: #00a2ca">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=2020020222" target="_blank"  style="font-size: 17px; color: #00a2ca"> 2020020222号</a>
+      <p>
+        <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" style="font-size: 15px;color: #00a2ca">本站由 <img style="width: 60px; margin-bottom: -9px" src="../../assets/img/又拍云_logo.png" alt="">提供CDN加速</a>
+      </p>
+
     </div>
   </div>
 </template>
 
 <script>
-
-
   import {getBiliBiliFan, getYouTubeFan} from "../../network/home";
-
-export default {
-  name: 'Home',
-  components: {
-  },
-  data(){
-    return{
-      bilibilifan: this.$t("home.touchGet"),
-      youtubefan: this.$t("home.touchGet"),
-      audio: null,
-      audioPath: require("assets/audio/不要摸我！.mp3"),
-    }
-  },
-  methods: {
-    getBFan(){
-      getBiliBiliFan().then(res => {
-        this.bilibilifan = res.data.follower;
-      })
+  export default {
+    name: 'Home',
+    components: {
     },
-    getYFan(){
-      getYouTubeFan().then(res => {
-        this.youtubefan = res.items[0].statistics.subscriberCount;
-      })
+    data(){
+      return{
+        bilibilifan: this.$t("home.touchGet"),
+        youtubefan: this.$t("home.touchGet"),
+        audio: null,
+        audioPath: require("assets/audio/不要摸我！.mp3"),
+      }
     },
-    noTouch(){
-      if (this.audio===null){
-        this.audio = new Audio(this.audioPath);
+    methods: {
+      getBFan(){
+        getBiliBiliFan().then(res => {
+          this.bilibilifan = res.data.follower;
+        })
+      },
+      getYFan(){
+        getYouTubeFan().then(res => {
+          this.youtubefan = res.items[0].statistics.subscriberCount;
+        })
+      },
+      noTouch(){
+        if (this.audio===null){
+          this.audio = new Audio(this.audioPath);
+        }
+        if (this.audio.paused||this.audio.ended){
+          this.audio.play();
+        }
       }
-      if (this.audio.paused||this.audio.ended){
-        this.audio.play();
+    },
+    computed: {
+      touchGet(){
+        return this.$t("home.touchGet");
       }
-    }
-  },
-  computed: {
-    touchGet(){
-      return this.$t("home.touchGet");
-    }
-  },
-  watch: {
-    touchGet(val){
-      this.bilibilifan = val;
-      this.youtubefan = val;
+    },
+    watch: {
+      touchGet(val){
+        this.bilibilifan = val;
+        this.youtubefan = val;
+      }
     }
   }
-}
 </script>
 
 <style scoped>
@@ -126,14 +127,12 @@ export default {
     display: inline-block;
     height: 45px;
     width: 300px;
-
     position: relative;
     border-radius: 16px;
     margin: 10px;
     padding: 10px;
     color: #fff;
     font-size: 20px;
-
     transition: 0.3s;
   }
   .link-button:hover{

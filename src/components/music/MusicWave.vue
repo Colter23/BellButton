@@ -10,20 +10,6 @@
 
 	export default {
 		name: "MusicWave",
-		props: {
-
-		},
-		data(){
-			return{
-
-			}
-		},
-		methods: {
-
-		},
-		mounted() {
-
-		}
 	}
 </script>
 

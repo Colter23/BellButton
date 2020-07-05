@@ -41,13 +41,9 @@
 		margin-top: -5px;
 		margin-left: 2px;
 		vertical-align: middle;
-
-		/*margin-top: 20px;*/
 		-webkit-appearance: none;
 		width: 200px;
 		border-radius: 20px;
-
-		/*background: linear-gradient(to right, rgba(140, 91, 219, 0.9), rgba(46, 169, 223, 0.9)) no-repeat;*/
 		background: linear-gradient(to right, rgba(var(--color-blue1), 0.7), rgba(var(--color-blue2),0.7)) no-repeat;
 		background-size: 50% 100%;
 	}
