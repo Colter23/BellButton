@@ -23,7 +23,7 @@
 		}),
 		methods: {
 			imgSrc(src){
-				return "http://img.mczhengyi.top/BellButton/" + src + "!web";
+				return "http://img.mczhengyi.top/BellButton/img/album/" + src + "!web";
 			},
 			updated() {
 				var grid = document.querySelector(".grid");

@@ -7,11 +7,12 @@
 
 		<!--专辑图-->
 		<div class="cover-box">
-			<img src="../../assets/img/cover1.png" class="cover-img turn" alt="" :class="isPlay?'running':'paused'">
+			<img src="http://img.mczhengyi.top/BellButton/img/cover1.png!web" class="cover-img turn" alt="" :class="isPlay?'running':'paused'">
 		</div>
 
 		<!--进度条-->
 		<div class="progress-bar">
+			<div @click="progressClick" ref="progressBar" class="progress-mask"></div>
 			<div class="progress" ref="progress"></div>
 			<div class="now-time">{{nowTime | formatTime}}</div>
 			<div class="count-time">{{musicLength | formatTime}}</div>
@@ -27,7 +28,7 @@
 			<div class="control-item next-control" @click="nextMusic"><i class="fas fa-step-forward"></i></div>
 		</div>
 
-		<audio @loadedmetadata="loaded" @ended="ended" :src="musicPath" ref="audio" id="audio"></audio>
+		<audio @timeupdate="update" @loadedmetadata="loaded" @ended="ended" :src="musicPath" ref="audio" id="audio"></audio>
 	</div>
 </template>
 
@@ -72,11 +73,11 @@
 				this.audioPause();
 				this.audioPlay();
 
-				if (this.timer) {
-					this.nowTime = 0;
-					clearInterval(this.timer);
-				}
-				this.timer = setInterval(this.updateProgress,1000);
+				// if (this.timer) {
+				// 	this.nowTime = 0;
+				// 	clearInterval(this.timer);
+				// }
+				// this.timer = setInterval(this.updateProgress,1000);
 			}
 		},
 		methods: {
@@ -88,21 +89,33 @@
 			ended() {
 				this.isPlay = false;
 			},
+			// 修改进度
+			progressClick(e) {
+				let clickPos = e.offsetX
+				let allLen = this.$refs.progressBar.offsetWidth
+				this.audio.currentTime = (clickPos / allLen) * this.musicLength
+			},
+			// 更新进度条
+			update() {
+				this.updateProgress()
+			},
 			//更新进度条
 			updateProgress(){
-				if (this.audio.currentTime === this.musicLength) {
-					clearInterval(this.timer);
-				}
+				// if (this.audio.currentTime === this.musicLength) {
+				// 	clearInterval(this.timer);
+				// }
 				this.nowTime = Math.round(this.audio.currentTime);
 				this.$refs.progress.style.width = this.musicLength?
 						(Math.round(this.audio.currentTime)/this.musicLength) *100 + "%":"0%";
 			},
 			//播放状态切换
 			audioSwitch() {
-				if (this.audio.paused) {
-					this.audioPlay();
-				} else {
-					this.audioPause();
+				if (this.playMusic != null){
+					if (this.audio.paused) {
+						this.audioPlay();
+					} else {
+						this.audioPause();
+					}
 				}
 			},
 			audioPlay() {
@@ -238,6 +251,15 @@
 		6px 6px 5px -2px rgba(0,0,0,0.2);
 		transition: 1s;
 		z-index: 1;
+	}
+	.progress-mask {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: var(--progress-bar-height);
+		border-radius: 40px;
+		z-index: 11;
 	}
 	.now-time{
 		position:absolute;
