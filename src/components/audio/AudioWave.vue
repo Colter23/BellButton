@@ -21,7 +21,7 @@
 			width: {
 				type: Number,
 				default() {
-					return 140
+					return 120
 				}
 			},
 			height: {
@@ -70,6 +70,15 @@
 			//监测音量变化
 			audioVolume(val) {
 				this.volumeNode.gain.value = val;
+			},
+			// 重新生成动画对象
+			width(val) {
+				// console.log(val)
+				//创建动画函数
+				if (val !== 0) {
+					this.canvas.width = this.width;
+					this.animefun = new wave(this.ctx, this.width / 2, this.height / 2);
+				}
 			}
 		},
 		computed: {
@@ -174,8 +183,7 @@
 			//决定voiceHeight数组的长度，数组是此值的一般
 			this.analyser.fftSize = 1024;
 
-			//创建动画函数
-			this.animefun = new wave(this.ctx, this.width / 2, this.height / 2);
+
 			//缓冲区
 			this.voiceHeight = new Uint8Array(this.analyser.frequencyBinCount);
 

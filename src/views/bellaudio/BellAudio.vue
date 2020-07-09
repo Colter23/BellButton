@@ -41,11 +41,28 @@
 				}else {
 					this.currentIndex = index;
 				}
+			},
+			resizeButton() {
+				let audioText = document.getElementsByClassName('audioText')
+				let audioButton = document.getElementsByClassName('audioButton')
+				for (let i = 0;i < audioText.length;i++){
+					audioButton[i].style.width = audioText[i].offsetWidth + 'px'
+					// console.log(audioText[i].offsetWidth)
+				}
 			}
 		},
 		computed: {
 			current_language(){
 				return this.$i18n.locale
+			}
+		},
+		mounted() {
+			this.resizeButton()
+		},
+		watch: {
+			// 重新设置按钮大小
+			current_language(val) {
+				this.$nextTick(() => this.resizeButton())
 			}
 		}
 	}

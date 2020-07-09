@@ -151,6 +151,7 @@
 				this.$i18n.locale = type;
 				this.isLanguageBoxOn = false;
 				this.$refs.language.style.display = "none";
+				this.$store.state.lang = this.$i18n.locale
 			}
 		}
 	}
