@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<canvas ref="canvas"></canvas>
+		<canvas class="audio-canvas" ref="canvas"></canvas>
 	</div>
 </template>
 
