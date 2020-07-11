@@ -23,7 +23,7 @@
 		},
 		computed: {
 			imgSrc(){
-				return "http://img.mczhengyi.top/BellButton/img/album/" + this.imgInfo.path + "!web"
+				return "https://img.mczhengyi.top/BellButton/img/album/" + this.imgInfo.path + "!web"
 			},
 			authorLink(){
 				return "https://space.bilibili.com/" + this.imgInfo.BID

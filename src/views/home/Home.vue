@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="box" @click="noTouch">
-      <img class=" bell-img" src="http://img.mczhengyi.top/BellButton/img/Qbell.png!web" alt="">
+      <img class=" bell-img" src="https://img.mczhengyi.top/BellButton/img/Qbell.png!web" alt="">
       <div style="margin-bottom: 10px; color: #a6a6a6; font-size: 20px">{{$t("home.touch.before")}}<del>prpr</del>{{$t("home.touch.after")}}
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-bell4"></use>
