@@ -7,7 +7,7 @@
 
 		<!--专辑图-->
 		<div class="cover-box">
-			<img src="http://img.mczhengyi.top/BellButton/img/cover1.png!web" class="cover-img turn" alt="" :class="isPlay?'running':'paused'">
+			<img src="https://img.mczhengyi.top/BellButton/img/cover1.png!web" class="cover-img turn" alt="" :class="isPlay?'running':'paused'">
 		</div>
 
 		<!--进度条-->
