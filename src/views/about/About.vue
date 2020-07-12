@@ -2,21 +2,6 @@
 	<div class="about">
 
 		<div class="text-box">
-			<p>日语机翻</p>
-			<p>日本語Google翻訳</p>
-			<p>我不行了。。快弃坑了</p>
-			<p>
-				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#icon-bell4"></use>
-				</svg>
-				prpr
-				<svg class="icon" aria-hidden="true">
-					<use xlink:href="#icon-bell4"></use>
-				</svg>
-			</p>
-		</div>
-
-		<div class="text-box">
 			<p>{{$t("about.feedback")}}</p>
 			<p>QQ{{$t("about.mail")}}:3375582524@qq.com</p>
 			<p>{{$t("about.letter")}}:
@@ -53,12 +38,6 @@
 				</a>
 			</p>
 			<p>
-				music素材:
-				<a href="https://space.bilibili.com/38288685" target="_blank" style="color: #00a2ca">
-					PYyyyyi
-				</a>
-			</p>
-			<p>
 				<svg class="icon" aria-hidden="true">
 					<use xlink:href="#icon-bell5"></use>
 				</svg>
@@ -80,6 +59,31 @@
 					正義desu-null
 				</a>
 			</p>
+			<p>
+				music素材:
+				<a href="https://space.bilibili.com/38288685" target="_blank" style="color: #00a2ca">
+					PYyyyyi
+				</a>
+			</p>
+			<p>
+			<p>{{$t("about.translate")}}:
+				<a href="https://space.bilibili.com/396322336" target="_blank" style="color: #00a2ca">
+					リイン-シュバルツァ
+				</a>
+			</p>
+			<p>
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-bell4"></use>
+				</svg>
+				prpr
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-bell4"></use>
+				</svg>
+			</p>
+		</div>
+
+		<div class="text-box">
+			<p>
 			<p>{{$t("about.copyright")}}</p>
 			<a href="https://icp.gov.moe" target="_blank" style="font-size: 20px;color: #00a2ca">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=2020020222" target="_blank" style="font-size: 20px;color: #00a2ca"> 2020020222号</a>
 			<p>
