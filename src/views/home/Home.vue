@@ -56,7 +56,7 @@
         bilibilifan: this.$t("home.touchGet"),
         youtubefan: this.$t("home.touchGet"),
         audio: null,
-        audioPath: require("audio/不要摸我！.mp3"),
+        audioPath: "audio/不要摸我！.mp3",
       }
     },
     methods: {

@@ -65,7 +65,7 @@
 				return this.playMusic?this.playMusic.name:""
 			},
 			musicPath(){
-				return this.playMusic?require("music/"+this.playMusic.path):""
+				return this.playMusic?"music/"+this.playMusic.path:""
 			}
 		},
 		watch: {
