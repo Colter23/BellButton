@@ -22,7 +22,7 @@
 				type: Object,
 				default(){
 					return{
-						src:require("assets/music/ふわふわ.mp3"),
+						src:require("../../../public/music/ふわふわ.mp3"),
 						title:"demo"
 					}
 				}
@@ -30,7 +30,7 @@
 		},
 		computed: {
 			audioPath(){
-				return require("assets/audio/"+this.audioInfo.path);
+				return require("audio/"+this.audioInfo.path);
 			},
 			current_language(){
 				return this.$i18n.locale

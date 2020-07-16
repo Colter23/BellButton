@@ -14,7 +14,7 @@
       <div class="fan" style="color: #ff2424" @click="getYFan">{{$t("home.ytbfan")}}: {{youtubefan}}</div>
       <div>
         <a href="https://space.bilibili.com/487550002" target="_blank" class="link-button bilibili-link">
-          <img src="../../assets/img/bilibili.svg" alt="" style="width: 30px; height: 30px; position: absolute; left: 35px; bottom: 50%; transform: translate3d(0px, 50%, 0px);">
+          <img src="../../../public/img/bilibili.svg" alt="" style="width: 30px; height: 30px; position: absolute; left: 35px; bottom: 50%; transform: translate3d(0px, 50%, 0px);">
           <span style="margin-left: 30px">猫芒ベル_Official</span>
         </a>
       </div>
@@ -38,7 +38,7 @@
       <div style="margin-bottom: 10px; color: #a6a6a6; font-size: 20px">{{$t("home.follow.before")}}<del>prpr</del>{{$t("home.follow.after")}}</div>
       <a href="https://icp.gov.moe" target="_blank" style="font-size: 17px; color: #00a2ca">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=2020020222" target="_blank"  style="font-size: 17px; color: #00a2ca"> 2020020222号</a>
       <p>
-        <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" style="font-size: 15px;color: #00a2ca">本站由 <img style="width: 60px; margin-bottom: -9px" src="../../assets/img/又拍云_logo.png" alt="">提供CDN加速</a>
+        <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" style="font-size: 15px;color: #00a2ca">本站由 <img style="width: 60px; margin-bottom: -9px" src="../../../public/img/又拍云_logo.png" alt="">提供CDN加速</a>
       </p>
 
     </div>
@@ -56,7 +56,7 @@
         bilibilifan: this.$t("home.touchGet"),
         youtubefan: this.$t("home.touchGet"),
         audio: null,
-        audioPath: require("assets/audio/不要摸我！.mp3"),
+        audioPath: require("audio/不要摸我！.mp3"),
       }
     },
     methods: {

@@ -15,7 +15,7 @@
 			audioInfo: {
 				type: Array,
 				default(){
-					return [{src:require("assets/audio/客人们H.mp3"),title:"客人们H~"}]
+					return [{src:require("audio/客人们H.mp3"),title:"客人们H~"}]
 				}
 			}
 		},

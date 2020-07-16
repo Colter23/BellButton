@@ -87,7 +87,7 @@
 			<p>{{$t("about.copyright")}}</p>
 			<a href="https://icp.gov.moe" target="_blank" style="font-size: 20px;color: #00a2ca">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=2020020222" target="_blank" style="font-size: 20px;color: #00a2ca"> 2020020222号</a>
 			<p>
-				<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" style="font-size: 17px;color: #00a2ca">本站由 <img style="width: 70px; margin-bottom: -11px" src="../../assets/img/又拍云_logo.png" alt="">提供CDN加速</a>
+				<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" style="font-size: 17px;color: #00a2ca">本站由 <img style="width: 70px; margin-bottom: -11px" src="../../../public/img/又拍云_logo.png" alt="">提供CDN加速</a>
 			</p>
 			<p>
 				<svg class="icon" aria-hidden="true">
@@ -129,7 +129,7 @@
 		margin-bottom: 10px;
 	}
 	.icon{
-		margin: 0px 6px -5px 3px;
+		margin: 0 6px -5px 3px;
 		font-size: 30px;
 	}
 </style>

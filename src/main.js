@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import i18n from './i18n'
 import '@fortawesome/fontawesome-free/css/all.css'
-import 'assets/iconfont/iconfont'
+import '../public/iconfont/iconfont'
 
 
 Vue.config.productionTip = false

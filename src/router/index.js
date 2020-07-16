@@ -56,6 +56,14 @@ Vue.use(VueRouter)
         title: '关于'
       },
       component: () => import('views/about/About.vue')
+    },
+    {
+      path: '/test',
+      name: 'Test',
+      meta: {
+        title: '测试'
+      },
+      component: () => import('views/test/Test.vue')
     }
   ]
 
@@ -65,4 +73,4 @@ const router = new VueRouter({
   routes
 })
 
-export default router
+export default router;

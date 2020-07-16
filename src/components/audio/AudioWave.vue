@@ -33,7 +33,7 @@
 			audioSrc: {
 				type: String,
 				default() {
-					return "assets/music/ふわふわ.mp3"
+					return "../../../public/music/ふわふわ.mp3"
 				}
 			}
 		},
