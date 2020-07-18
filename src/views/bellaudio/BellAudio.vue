@@ -6,7 +6,7 @@
 
 		<audio-volume class="audio-volume"></audio-volume>
 
-		<div style="width: 100%;">
+		<div style="width:100%">
 			<div class="card" v-for="(voice, index1) in voiceList" :key="index1">
 				<p class="card-text">{{voice.translation[current_language]}}</p>
 				<div class="audio-item" v-for="(item, index2) in voice.voicelist"  @click="clickItem(index1+''+index2)" :key="index2">

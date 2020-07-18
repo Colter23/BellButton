@@ -130,12 +130,12 @@ body{
 
 @font-face {
 	font-family: 'iconfont';
-	src: url('../iconfont/iconfont.eot');
-	src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
-	url('../iconfont/iconfont.woff2') format('woff2'),
-	url('../iconfont/iconfont.woff') format('woff'),
-	url('../iconfont/iconfont.ttf') format('truetype'),
-	url('../iconfont/iconfont.svg#iconfont') format('svg');
+	src: url('../../../public/iconfont/iconfont.eot');
+	src: url('../../../public/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+	url('../../../public/iconfont/iconfont.woff2') format('woff2'),
+	url('../../../public/iconfont/iconfont.woff') format('woff'),
+	url('../../../public/iconfont/iconfont.ttf') format('truetype'),
+	url('../../../public/iconfont/iconfont.svg#iconfont') format('svg');
 }
 
 .iconfont {

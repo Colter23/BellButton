@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from 'views/home/Home.vue'
+import Home from '../views/home/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -23,7 +23,7 @@ Vue.use(VueRouter)
       meta: {
         title: '音频'
       },
-      component: () => import('views/bellaudio/BellAudio.vue')
+      component: () => import('../views/bellaudio/BellAudio.vue')
     },
     {
       path: '/album',
@@ -31,7 +31,7 @@ Vue.use(VueRouter)
       meta: {
         title: '相册'
       },
-      component: () => import('views/bellalbum/BellAlbum.vue')
+      component: () => import('../views/bellalbum/BellAlbum.vue')
     },
     {
       path: '/music',
@@ -39,7 +39,7 @@ Vue.use(VueRouter)
       meta: {
         title: '音乐'
       },
-      component: () => import('views/bellmusic/BellMusic.vue')
+      component: () => import('../views/bellmusic/BellMusic.vue')
     },
     {
       path: '/video',
@@ -47,7 +47,7 @@ Vue.use(VueRouter)
       meta: {
         title: '视频'
       },
-      component: () => import('views/bellvideo/BellVideo.vue')
+      component: () => import('../views/bellvideo/BellVideo.vue')
     },
     {
       path: '/about',
@@ -55,7 +55,15 @@ Vue.use(VueRouter)
       meta: {
         title: '关于'
       },
-      component: () => import('views/about/About.vue')
+      component: () => import('../views/about/About.vue')
+    },
+    {
+      path: '/test',
+      name: 'Test',
+      meta: {
+        title: '测试'
+      },
+      component: () => import('../views/test/Test.vue')
     }
   ]
 
@@ -65,4 +73,4 @@ const router = new VueRouter({
   routes
 })
 
-export default router
+export default router;

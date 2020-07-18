@@ -34,6 +34,12 @@
 - GitHub [Colter23](https://github.com/Colter23)  
   BiliBili [Colter_null](https://space.bilibili.com/32868931)
   
+music素材:
+- BiliBili [PYyyyyi](https://space.bilibili.com/38288685)
+
+翻译:
+-  BiliBili [リイン-シュバルツァ](https://space.bilibili.com/396322336)
+  
 ## 协议
 [ViViD 二次创作条款](https://vividnia.com/guidelines/)
 

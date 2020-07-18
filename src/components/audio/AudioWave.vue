@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<canvas ref="canvas"></canvas>
+		<canvas class="audio-canvas" ref="canvas"></canvas>
 	</div>
 </template>
 
@@ -33,7 +33,7 @@
 			audioSrc: {
 				type: String,
 				default() {
-					return "assets/music/ふわふわ.mp3"
+					return "../../../public/music/ふわふわ.mp3"
 				}
 			}
 		},
