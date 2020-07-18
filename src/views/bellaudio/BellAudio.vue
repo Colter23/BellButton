@@ -60,6 +60,7 @@
 			this.resizeButton()
 		},
 		watch: {
+			// FIXME: 切换时出现按钮丢失、错位
 			// 重新设置按钮大小
 			current_language(val) {
 				this.$nextTick(() => this.resizeButton())
