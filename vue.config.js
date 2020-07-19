@@ -11,8 +11,9 @@ module.exports={
 				.set('common',resolve('./src/common'))
 				.set('network',resolve('./src/network'))
 				.set('views',resolve('./src/views'))
-				.set('audio',resolve('./public/audio'))
-				.set('music',resolve('./public/music'))
 		//set第一个参数：设置的别名，第二个参数：设置的路径
 	}
 }
+
+//.set('audiofile',resolve('./public/audiofile'))
+//.set('musicfile',resolve('./public/musicfile'))

@@ -48,7 +48,7 @@
 					<div class="ts-item top-radius ts-zh" @click="changeLanguage('zh')">简体中文</div>
 					<div class="ts-item bottom-radius ts-ja" @click="changeLanguage('ja')">日本語</div>
 				</div>
-				<router-link to="/about" style="width: 50%; font-size: 18px; vertical-align: middle;">About</router-link>
+				<router-link to="/about" style="width: 50%; font-size: var(--about-font-size); vertical-align: middle;">About</router-link>
 			</div>
 		</nav-bar>
 

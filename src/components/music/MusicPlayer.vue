@@ -65,7 +65,7 @@
 				return this.playMusic?this.playMusic.name:""
 			},
 			musicPath(){
-				return this.playMusic?"music/"+this.playMusic.path:""
+				return this.playMusic?"musicfile/"+this.playMusic.path:""
 			}
 		},
 		watch: {
@@ -101,7 +101,7 @@
 			},
 			//更新进度条
 			updateProgress(){
-				// if (this.audio.currentTime === this.musicLength) {
+				// if (this.audiofile.currentTime === this.musicLength) {
 				// 	clearInterval(this.timer);
 				// }
 				this.nowTime = Math.round(this.audio.currentTime);
@@ -163,8 +163,8 @@
 				this.updateControlbBoxSize();
 			});
 
-			//this.audio = new Audio(val);
-			// this.audio = this.$refs.audio;
+			//this.audiofile = new Audio(val);
+			// this.audiofile = this.$refs.audiofile;
 			this.audio = this.$refs.audio
 
 			this.context = new(window.AudioContext || window.webkitAudioContext)();
@@ -184,7 +184,7 @@
 			//音量节点与输出目标连接
 			this.volumeNode.connect(this.context.destination);
 
-			// this.audio.load();
+			// this.audiofile.load();
 
 		}
 	}

@@ -12,12 +12,11 @@
 		name: "MainAudio",
 		components: {AudioButton},
 		props:{
-			audioInfo: {
-				type: Array,
-				default(){
-					return [{src:require("audio/客人们H.mp3"),title:"客人们H~"}]
-				}
-			}
+			audioInfo: {},
+			// type: Array,
+			// default(){
+			// 	return [{src:"audiofile/客人们H.mp3",title:"客人们H~"}]
+			// }
 		},
 		data(){
 			return{

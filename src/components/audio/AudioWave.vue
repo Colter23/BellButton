@@ -33,7 +33,7 @@
 			audioSrc: {
 				type: String,
 				default() {
-					return "../../../public/music/ふわふわ.mp3"
+					return "../../../public/musicfile/ふわふわ.mp3"
 				}
 			}
 		},
@@ -140,7 +140,7 @@
 				this.animefun.input(this.voiceHeight, sum / cont, 44100)
 
 				this.anime = requestAnimationFrame(this.draw);
-				//console.log(this.audio.ended)
+				//console.log(this.audiofile.ended)
 				if (this.audio.ended){
 					this.audioEnd();
 				}

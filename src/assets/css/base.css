@@ -39,8 +39,16 @@
 	}
 }
 
+@media (min-width:740px){
+	:root{
+		--about-font-size: 18px;
+	}
+}
+
 @media (max-width:740px){
 	:root{
+		--about-font-size: 15px;
+
 		--font-text-size: 0px;
 		--font-icon-size: 30px;
 

@@ -18,19 +18,18 @@
 		},
 		props: {
 			isPlay: false,
-			audioInfo: {
-				type: Object,
-				default(){
-					return{
-						src:"../../../public/music/ふわふわ.mp3",
-						title:"demo"
-					}
-				}
-			}
+			audioInfo: {},
+			// type: Object,
+			// default(){
+			// 	return{
+			// 		src:"../../../public/musicfile/ふわふわ.mp3",
+			// 		title:"demo"
+			// 	}
+			// }
 		},
 		computed: {
 			audioPath(){
-				return "audio/"+this.audioInfo.path;
+				return "audiofile/"+this.audioInfo.path;
 			},
 			current_language(){
 				return this.$i18n.locale

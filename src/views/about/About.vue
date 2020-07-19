@@ -33,6 +33,11 @@
 				</a>
 			</p>
 			<p>
+				<a href="https://sepeach.com/" target="_blank" style="color: #00a2ca">
+					{{$t("about.peachbtn")}}
+				</a>
+			</p>
+			<p>
 				<a href="https://github.com/Colter23/BellButton" target="_blank" style="color: #00a2ca">
 					GitHub仓库
 				</a>

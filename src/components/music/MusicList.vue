@@ -1,6 +1,6 @@
 <template>
 	<div class="music-list">
-		<div class="music-item" :class="playIndex===index?'music-item-play':''" v-for="(music, index) in musicList" :key="index">
+		<div class="music-item" :class="playIndex===index?'musicfile-item-play':''" v-for="(music, index) in musicList" :key="index">
 			<div class="music-item-title">
 				{{music.name}}
 			</div>
