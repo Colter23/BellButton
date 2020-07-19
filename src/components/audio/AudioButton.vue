@@ -1,6 +1,6 @@
 <template>
-	<div class="audioButton">
-		<span ref="audioButton" class="audioText" v-show="!isEnd">
+	<div ref="audioButton" class="audioButton">
+		<span ref="audioButtonText" class="audioText" v-show="!isEnd">
 			{{audioInfo.translation[current_language]}}
 		</span>
 		<audio-wave :audio-src="audioPath" :is-play="isEnd" @playEnd="isEnd=false"
@@ -40,7 +40,7 @@
 				isEnd: false,
 				// 按钮宽度
 				buttonWidth: 0,
-				buttonHeight: 30
+				buttonHeight: 0
 			}
 		},
 		watch: {
@@ -58,12 +58,24 @@
 		},
 		methods: {
 			resizeButton() {
-				if (this.$refs.audioButton.offsetWidth>window.screen.width*0.8){
-					this.buttonWidth = window.screen.width*0.8;
-					this.buttonHeight = 60;
-					console.log(this.buttonWidth+"  "+this.buttonHeight+"   1111")
+				// 设置强制单行，便于检测
+				this.$refs.audioButtonText.style.whiteSpace = "nowrap"
+				if (this.$refs.audioButtonText.offsetWidth>window.screen.width*0.8){
+					// 设置为多行
+					this.$refs.audioButtonText.style.whiteSpace = "normal"
+					// 设置按钮大小
+					this.$refs.audioButton.style.width = window.screen.width - 120 + "px";
+					this.$refs.audioButton.style.height = this.$refs.audioButtonText.offsetHeight + "px";
+					// 设置canvas大小
+					this.buttonHeight = this.$refs.audioButtonText.offsetHeight;
+					this.buttonWidth = window.screen.width - 120;
 				} else {
-					this.buttonWidth = this.$refs.audioButton.offsetWidth;
+					// 设置canvas大小
+					this.buttonHeight = 30;
+					this.buttonWidth = Math.ceil(this.$refs.audioButtonText.offsetWidth);
+					// 设置按钮大小
+					this.$refs.audioButton.style.height = this.$refs.audioButtonText.offsetHeight + "px";
+					this.$refs.audioButton.style.width = Math.ceil(this.$refs.audioButtonText.offsetWidth) + "px";
 					// console.log(window.screen.width+"   2222")
 				}
 
@@ -87,7 +99,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		height: 100%;
+		/*height: 100%;*/
 		/*width: 100%;*/
 		line-height: 37px;
 		padding: 0 20px;

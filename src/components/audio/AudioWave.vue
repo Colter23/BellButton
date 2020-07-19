@@ -71,14 +71,14 @@
 			audioVolume(val) {
 				this.volumeNode.gain.value = val;
 			},
-			// 重新生成动画对象
+			// 重新生成动画对象，要求高宽传入正确数值后生成
 			width(val) {
 				// console.log(val)
 				//创建动画函数
-				if (val !== 0) {
-					this.canvas.width = this.width;
-					this.animefun = new wave(this.ctx, this.width / 2, this.height / 2);
-				}
+				this.createAnimate()
+			},
+			height(val) {
+				this.createAnimate()
 			}
 		},
 		computed: {
@@ -87,6 +87,17 @@
 			}
 		},
 		methods: {
+			// 创建动画函数
+			createAnimate() {
+				if (this.width !== 0 && this.height !== 0) {
+					this.canvas.width = this.width;
+					this.animefun = new wave(this.ctx, this.width / 2, this.height / 2);
+
+					//设置画布大小
+					this.canvas.width = this.width;
+					this.canvas.height = this.height;
+				}
+			},
 			//播放状态切换
 			audioSwitch(isPlay) {
 				if (this.audio.paused) {
@@ -157,9 +168,6 @@
 			this.canvas = this.$refs.canvas;
 			this.ctx = this.canvas.getContext("2d");
 
-			//设置画布大小
-			this.canvas.width = this.width;
-			this.canvas.height = this.height;
 
 			//创建媒体源
 			let audioSrc = this.context.createMediaElementSource(this.audio);

@@ -42,13 +42,8 @@
 					this.currentIndex = index;
 				}
 			},
-			resizeButton() {
-				let audioText = document.getElementsByClassName('audioText')
-				let audioButton = document.getElementsByClassName('audioButton')
-				for (let i = 0;i < audioText.length;i++){
-					audioButton[i].style.width = audioText[i].offsetWidth + 'px'
-					// console.log(audioText[i].offsetWidth)
-				}
+			cancelPlay() {
+				this.currentIndex = -1;
 			}
 		},
 		computed: {
@@ -57,13 +52,12 @@
 			}
 		},
 		mounted() {
-			this.resizeButton()
 		},
 		watch: {
 			// FIXME: 切换时出现按钮丢失、错位
 			// 重新设置按钮大小
 			current_language(val) {
-				this.$nextTick(() => this.resizeButton())
+				this.currentIndex = -1;
 			}
 		}
 	}
