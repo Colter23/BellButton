@@ -26,7 +26,7 @@
 
 - 正义desu    
   Github [justice2001](https://github.com/justice2001)  
-  码云 [zhengyi](https://gitee.com/zhengyi59)  
+  码云 [Zhengyi](https://gitee.com/zhengyi59)  
   Bilibili [正義desu-null](https://space.bilibili.com/30734570)
   
 
