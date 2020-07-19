@@ -33,13 +33,13 @@
 				</a>
 			</p>
 			<p>
-				<a href="https://sepeach.com/" target="_blank" style="color: #00a2ca">
-					{{$t("about.peachbtn")}}
+				<a href="https://fubuki.moe/" target="_blank" style="color: #00a2ca">
+					{{$t("about.fbkbtn")}}
 				</a>
 			</p>
 			<p>
-				<a href="https://github.com/Colter23/BellButton" target="_blank" style="color: #00a2ca">
-					GitHub仓库
+				<a href="https://sepeach.com/" target="_blank" style="color: #00a2ca">
+					{{$t("about.peachbtn")}}
 				</a>
 			</p>
 			<p>
@@ -88,8 +88,12 @@
 		</div>
 
 		<div class="text-box">
-			<p>
 			<p>{{$t("about.copyright")}}</p>
+			<p>
+				<a href="https://github.com/Colter23/BellButton" target="_blank" style="color: #00a2ca">
+					GitHub仓库
+				</a>
+			</p>
 			<a href="https://icp.gov.moe" target="_blank" style="font-size: 20px;color: #00a2ca">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=2020020222" target="_blank" style="font-size: 20px;color: #00a2ca"> 2020020222号</a>
 			<p>
 				<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" style="font-size: 17px;color: #00a2ca">本站由 <img style="width: 70px; margin-bottom: -11px" src="../../../public/img/又拍云_logo.png" alt="">提供CDN加速</a>
