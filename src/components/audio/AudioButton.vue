@@ -4,7 +4,7 @@
 			{{audioInfo.translation[current_language]}}
 		</span>
 		<audio-wave :audio-src="audioPath" :is-play="isEnd" @playEnd="isEnd=false"
-		            :width="this.buttonWidth" :height="30"></audio-wave>
+		            :width="buttonWidth" :height="buttonHeight"></audio-wave>
 	</div>
 </template>
 
@@ -39,7 +39,8 @@
 			return{
 				isEnd: false,
 				// 按钮宽度
-				buttonWidth: 0
+				buttonWidth: 0,
+				buttonHeight: 30
 			}
 		},
 		watch: {
@@ -57,7 +58,15 @@
 		},
 		methods: {
 			resizeButton() {
-				this.buttonWidth = this.$refs.audioButton.offsetWidth
+				if (this.$refs.audioButton.offsetWidth>window.screen.width*0.8){
+					this.buttonWidth = window.screen.width*0.8;
+					this.buttonHeight = 60;
+					console.log(this.buttonWidth+"  "+this.buttonHeight+"   1111")
+				} else {
+					this.buttonWidth = this.$refs.audioButton.offsetWidth;
+					// console.log(window.screen.width+"   2222")
+				}
+
 			}
 		}
 	}
