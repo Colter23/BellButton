@@ -2,7 +2,8 @@
 
 >关于Bell的网站
 
-## 项目地址：https://bell.colter.top/
+## 此项目以停止维护 
+## 新项目地址：https://github.com/ViViDButton/vivid-button/
 
 ## 相关链接：
 
